@@ -19,6 +19,11 @@ public class Book {
 	@Column(name = "PRICE")
 	private Integer price;
 
+	@Override
+	public String toString() {
+		return "Book [id=" + id + ", name=" + name + ", price=" + price + "]";
+	}
+
 	public Long getId() {
 		return id;
 	}
