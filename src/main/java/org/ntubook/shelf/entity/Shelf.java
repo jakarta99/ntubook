@@ -14,10 +14,13 @@ public class Shelf {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID")
 	private Long id;
+	
 	@Column(name = "NAME")
 	private String name;
+	
 	@Column(name = "HEIGHT")
 	private Integer height;
+	
 	public Long getId() {
 		return id;
 	}
