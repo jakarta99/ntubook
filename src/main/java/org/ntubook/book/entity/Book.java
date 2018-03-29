@@ -2,6 +2,8 @@ package org.ntubook.book.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,6 +11,7 @@ import javax.persistence.Table;
 @Table(name = "BOOK")
 public class Book {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID")
 	private Long id;
 	@Column(name = "NAME")
@@ -39,5 +42,5 @@ public class Book {
 	public void setPrice(Integer price) {
 		this.price = price;
 	}
-	
+
 }
