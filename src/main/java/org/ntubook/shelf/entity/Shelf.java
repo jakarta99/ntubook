@@ -14,16 +14,20 @@ public class Shelf {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID")
 	private Long id;
-	
 	@Column(name = "NAME")
 	private String name;
-	
 	@Column(name = "HEIGHT")
 	private Integer height;
+	
+	@Override
+	public String toString() {
+		return "Shelf [id=" + id + ", name=" + name + ", height=" + height + "]";
+	}
 	
 	public Long getId() {
 		return id;
 	}
+	
 	public void setId(Long id) {
 		this.id = id;
 	}
