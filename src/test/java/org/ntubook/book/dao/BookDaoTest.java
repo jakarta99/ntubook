@@ -16,16 +16,19 @@ public class BookDaoTest {
 	@Test
 	public void testFindAll() {
 		Book book1 = new Book();
-		book1.setName("Calculate");
 		book1.setPrice(100);
+		book1.setName("Calculate");
+		book1.setId(50505050505L);
 		
 		bookDao.save(book1);
 		
 		Book book2 = new Book();
 		book2.setName("Economics");
-		book2.setPrice(200);
+		book2.setPrice(500);
 		
 		bookDao.save(book2);
+		
+
 		
 		Iterable<Book> books = bookDao.findAll();
 		
