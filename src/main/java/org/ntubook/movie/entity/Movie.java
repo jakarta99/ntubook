@@ -20,11 +20,15 @@ public class Movie {
 	private String type;
 	@Column(name = "YEAR" )
 	private Integer year;
-	
+	@Column(name = "SCORE" )
+	private Integer score;
+	@Column(name = "COUNTRY" )
+	private String country;
 	
 	@Override
 	public String toString() {
-		return "Movie [id=" + id + ", name=" + name + ", type=" + type + ", year=" + year + "]";
+		return "Movie [id=" + id + ", name=" + name + ", type=" + type + ", year=" + year + ", score=" + score
+				+ ", country=" + country + "]";
 	}
 
 	public Long getId() {
@@ -60,4 +64,19 @@ public class Movie {
 		this.year = year;
 	}
 	
+	public Integer getScore() {
+		return score;
+	}
+
+	public void setScore(Integer score) {
+		this.score = score;
+	}
+	
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
 }
