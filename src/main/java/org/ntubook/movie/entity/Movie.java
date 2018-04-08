@@ -21,6 +21,12 @@ public class Movie {
 	@Column(name = "YEAR" )
 	private Integer year;
 	
+	
+	@Override
+	public String toString() {
+		return "Movie [id=" + id + ", name=" + name + ", type=" + type + ", year=" + year + "]";
+	}
+
 	public Long getId() {
 		return id;
 	}
