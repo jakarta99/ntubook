@@ -20,10 +20,11 @@ public class MovieDaoTest {
 	public void testCrud() {
 		//findAll
 		List<Movie> movies = Lists.newArrayList(movieDao.findAll());
-		for (Movie movie:movies) {
+		for (Movie movie:movies) {           
 			System.out.println(movie);
 		}
 		System.out.println("======================================================");
+		
 		//insert
 		Movie movie1 = new Movie();
 		movie1.setType("Comedy");
@@ -49,6 +50,7 @@ public class MovieDaoTest {
 			System.out.println(movie);
 		}
 		System.out.println("======================================================");
+		
 		//update
 		Movie movie2 = new Movie();
 		movie2.setId(1L);
@@ -59,12 +61,14 @@ public class MovieDaoTest {
 		movie2.setCountry("USA");
 		
 		movieDao.save(movie2);
+		
 		//findAll
 		movies = Lists.newArrayList(movieDao.findAll());
 		for (Movie movie:movies) {
 			System.out.println(movie);
 		}
 		System.out.println("======================================================");
+		
 		//delete
 		Movie movie3 = new Movie();
 		movie3.setId(1L);
