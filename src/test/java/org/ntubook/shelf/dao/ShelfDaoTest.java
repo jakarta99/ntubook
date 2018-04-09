@@ -25,12 +25,16 @@ public class ShelfDaoTest {
 		Shelf shelf1 = new Shelf();
 		shelf1.setHeight(100);
 		shelf1.setName("no.1");
+		shelf1.setLenth(20);
+		shelf1.setWidth(50);
 		
 		shelfDao.save(shelf1);
 		
 		Shelf shelf2 = new Shelf();
 		shelf2.setHeight(80);
 		shelf2.setName("no.2");
+		shelf2.setLenth(44);
+		shelf2.setWidth(88);
 		
 		shelfDao.save(shelf2);
 		
