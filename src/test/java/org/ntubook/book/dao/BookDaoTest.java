@@ -27,11 +27,24 @@ public class BookDaoTest {
 		//insert
 		Book book1 = new Book();
 		book1.setPrice(100);
-		book1.setName("Calculate");
+		book1.setName("Calculate".toUpperCase());
 		
 		bookDao.save(book1);
+		
+		Book book4 = new Book();
+		book4.setPrice(100);
+		book4.setName("Computer");
+		
+		bookDao.save(book4);
+		
+		Book book5 = new Book();
+		book5.setPrice(100);
+		book5.setName("Java");
+		
+		bookDao.save(book5);
+		
 		//findAll
-		books = Lists.newArrayList(bookDao.findAll()); 
+		books = bookDao.findByNameLike("C%");
 		for (Book book:books) {
 			System.out.println(book);
 		}
