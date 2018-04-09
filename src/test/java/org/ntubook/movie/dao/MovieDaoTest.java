@@ -1,5 +1,8 @@
 package org.ntubook.movie.dao;
 
+import java.util.List;
+
+import org.assertj.core.util.Lists;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.ntubook.movie.entity.Movie;
@@ -14,11 +17,72 @@ public class MovieDaoTest {
 	private MovieDao movieDao;
 
 	@Test
-	public void testFindAll() {
+	public void testCrud() {
+		//findAll
+		List<Movie> movies = Lists.newArrayList(movieDao.findAll());
+		for (Movie movie:movies) {
+			System.out.println(movie);
+		}
+		System.out.println("======================================================");
+		//insert
+		Movie movie1 = new Movie();
+		movie1.setType("Comedy");
+		movie1.setName("Penny Pincher".toUpperCase());
+		movie1.setYear(2016);
+		movie1.setScore(7.2f);
+		movie1.setCountry("France");
+		
+		movieDao.save(movie1);
+		
+		Movie movie4 = new Movie();
+		movie4.setType("Comedy");
+		movie4.setName("ET");
+		movie4.setYear(2016);
+		movie4.setScore(7.2f);
+		movie4.setCountry("France");
+		
+		movieDao.save(movie4);
+		
+		//findAll
+		movies = movieDao.findByNameLike("%P%");
+		for (Movie movie:movies) {
+			System.out.println(movie);
+		}
+		System.out.println("======================================================");
+		//update
+		Movie movie2 = new Movie();
+		movie2.setId(1L);
+		movie2.setType("Horror");
+		movie2.setName("A Quiet Place");
+		movie2.setYear(2018);
+		movie2.setScore(6.9f);
+		movie2.setCountry("USA");
+		
+		movieDao.save(movie2);
+		//findAll
+		movies = Lists.newArrayList(movieDao.findAll());
+		for (Movie movie:movies) {
+			System.out.println(movie);
+		}
+		System.out.println("======================================================");
+		//delete
+		Movie movie3 = new Movie();
+		movie3.setId(1L);
+		movieDao.delete(movie3);
+		
+		//findAll
+		movies = Lists.newArrayList(movieDao.findAll());
+		for (Movie movie:movies) {
+			System.out.println(movie);
+		}
+		System.out.println("======================================================");
+		
+		
+		
+		/*
 		Movie movie1 = new Movie();
 		movie1.setType("Comedy");
 		movie1.setName("Penny Pincher");
-		movie1.setId(0101010101L);
 		movie1.setYear(2016);
 		movie1.setScore(7.2f);
 		movie1.setCountry("France");
@@ -27,7 +91,6 @@ public class MovieDaoTest {
 		Movie movie2 = new Movie();
 		movie2.setType("Horror");
 		movie2.setName("A Quiet Place");
-		movie2.setId(0101010102L);
 		movie2.setYear(2018);
 		movie2.setScore(6.9f);
 		movie2.setCountry("USA");
@@ -36,7 +99,6 @@ public class MovieDaoTest {
 		Movie movie3 = new Movie();
 		movie3.setType("Animated");
 		movie3.setName("Zootopia");
-		movie3.setId(0101010103L);
 		movie3.setYear(2016);
 		movie3.setScore(7.9f);
 		movie3.setCountry("USA");
@@ -45,7 +107,6 @@ public class MovieDaoTest {
 		Movie movie4 = new Movie();
 		movie4.setType("Adventure");
 		movie4.setName("Jumanji");
-		movie4.setId(0101010104L);
 		movie4.setYear(2017);
 		movie4.setScore(6.4f);
 		movie4.setCountry("USA");
@@ -54,7 +115,6 @@ public class MovieDaoTest {
 		Movie movie5 = new Movie();
 		movie5.setType("Thriller");
 		movie5.setName("Miss Sloane");
-		movie5.setId(0101010105L);
 		movie5.setYear(2016);
 		movie5.setScore(9.1f);
 		movie5.setCountry("USA and France");
@@ -63,7 +123,6 @@ public class MovieDaoTest {
 		Movie movie6 = new Movie();
 		movie6.setType("Drama");
 		movie6.setName("Dangal");
-		movie6.setId(0101010106L);
 		movie6.setYear(2016);
 		movie6.setScore(9.2f);
 		movie6.setCountry("India");
@@ -72,7 +131,6 @@ public class MovieDaoTest {
 		Movie movie7 = new Movie();
 		movie7.setType("Biography");
 		movie7.setName("The King's Speech");
-		movie7.setId(0101010107L);
 		movie7.setYear(2010);
 		movie7.setScore(7.5f);
 		movie7.setCountry("UK");
@@ -84,6 +142,7 @@ public class MovieDaoTest {
 		for(Movie movie:movies) {
 			System.out.println(movie);
 		}
+		*/
 	}
 
 }
