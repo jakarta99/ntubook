@@ -19,13 +19,14 @@ public class BookDaoTest {
 	@Test
 	public void testCrud() {
 		//findAll
-		List<Book> books = Lists.newArrayList(bookDao.findAll()); 
-		for (Book book:books) {
-			System.out.println(book);
+		List<Book> books = Lists.newArrayList(bookDao.findAll()); //<class> variable
+		for (Book book:books) {  //class variable:list
+			System.out.println(book);  //variable
 		}
 		System.out.println("===================================================");
+		
 		//insert
-		Book book1 = new Book();
+		Book book1 = new Book(); //class variable = new object
 		book1.setPrice(100);
 		book1.setName("Calculate".toUpperCase());
 		
@@ -56,12 +57,14 @@ public class BookDaoTest {
 		book2.setPrice(500);
 		
 		bookDao.save(book2);
+		
 		//findAll
 		books = Lists.newArrayList(bookDao.findAll()); 
 		for (Book book:books) {
 			System.out.println(book);
 		}
 		System.out.println("===================================================");
+		
 		//delete
 		Book book3 = new Book();
 		book3.setId(1L);
