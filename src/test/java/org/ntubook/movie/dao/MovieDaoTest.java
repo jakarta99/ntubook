@@ -20,7 +20,7 @@ public class MovieDaoTest {
 		movie1.setName("Penny Pincher");
 		movie1.setId(0101010101L);
 		movie1.setYear(2016);
-		movie1.setScore(7);
+		movie1.setScore(7.2f);
 		movie1.setCountry("France");
 		movieDao.save(movie1);
 		
@@ -29,7 +29,7 @@ public class MovieDaoTest {
 		movie2.setName("A Quiet Place");
 		movie2.setId(0101010102L);
 		movie2.setYear(2018);
-		movie2.setScore(7);
+		movie2.setScore(6.9f);
 		movie2.setCountry("USA");
 		movieDao.save(movie2);
 		
@@ -38,7 +38,7 @@ public class MovieDaoTest {
 		movie3.setName("Zootopia");
 		movie3.setId(0101010103L);
 		movie3.setYear(2016);
-		movie3.setScore(8);
+		movie3.setScore(7.9f);
 		movie3.setCountry("USA");
 		movieDao.save(movie3);
 		
@@ -47,7 +47,7 @@ public class MovieDaoTest {
 		movie4.setName("Jumanji");
 		movie4.setId(0101010104L);
 		movie4.setYear(2017);
-		movie4.setScore(6);
+		movie4.setScore(6.4f);
 		movie4.setCountry("USA");
 		movieDao.save(movie4);
 		
@@ -56,7 +56,7 @@ public class MovieDaoTest {
 		movie5.setName("Miss Sloane");
 		movie5.setId(0101010105L);
 		movie5.setYear(2016);
-		movie5.setScore(9);
+		movie5.setScore(9.1f);
 		movie5.setCountry("USA and France");
 		movieDao.save(movie5);
 
@@ -65,7 +65,7 @@ public class MovieDaoTest {
 		movie6.setName("Dangal");
 		movie6.setId(0101010106L);
 		movie6.setYear(2016);
-		movie6.setScore(9);
+		movie6.setScore(9.2f);
 		movie6.setCountry("India");
 		movieDao.save(movie6);
 		
@@ -74,7 +74,7 @@ public class MovieDaoTest {
 		movie7.setName("The King's Speech");
 		movie7.setId(0101010107L);
 		movie7.setYear(2010);
-		movie7.setScore(7);
+		movie7.setScore(7.5f);
 		movie7.setCountry("UK");
 		movieDao.save(movie7);
 		

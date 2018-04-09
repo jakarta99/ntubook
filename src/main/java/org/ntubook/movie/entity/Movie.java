@@ -21,7 +21,7 @@ public class Movie {
 	@Column(name = "YEAR" )
 	private Integer year;
 	@Column(name = "SCORE" )
-	private Integer score;
+	private Float score;
 	@Column(name = "COUNTRY" )
 	private String country;
 	
@@ -64,11 +64,11 @@ public class Movie {
 		this.year = year;
 	}
 	
-	public Integer getScore() {
+	public Float getScore() {
 		return score;
 	}
 
-	public void setScore(Integer score) {
+	public void setScore(Float score) {
 		this.score = score;
 	}
 	
@@ -79,4 +79,5 @@ public class Movie {
 	public void setCountry(String country) {
 		this.country = country;
 	}
+
 }
