@@ -14,13 +14,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-
-
-
 public class ShelfDaoTest {
 	
-	
-
 	@Autowired
 	private ShelfDao shelfDao;
 	
@@ -34,7 +29,7 @@ public class ShelfDaoTest {
 		
 		System.out.println("------------------------------------------");
 
-		//insert
+		//insert1
 		Shelf shelf1 = new Shelf();
 		shelf1.setName("BRIMNES");
 		shelf1.setHeight(100);
@@ -42,42 +37,34 @@ public class ShelfDaoTest {
 		shelf1.setWidth(50);
 		shelfDao.save(shelf1);
 		
-		//findAll
-		shelfs = Lists.newArrayList(shelfDao.findAll());
-		for (Shelf shelf:shelfs) {
-			System.out.println(shelf);
-		}
-		
-		System.out.println("------------------------------------------");
-		
-		//update
+		//insert2
 		Shelf shelf2 = new Shelf();
-		shelf2.setId(1L);
 		shelf2.setName("HOFORS");
 		shelf2.setHeight(80);
 		shelf2.setLenth(44);
 		shelf2.setWidth(88);
 		shelfDao.save(shelf2);
 		
-		//findAll
-		shelfs = Lists.newArrayList(shelfDao.findAll());
-		for (Shelf shelf:shelfs) {
-			System.out.println(shelf);
-		}
-		
-		System.out.println("------------------------------------------");
-		
-		//delete
+		//insert3
 		Shelf shelf3 = new Shelf();
-		shelf3.setId(1L);
-		shelfDao.delete(shelf3);
+		shelf3.setName("BILLY");
+		shelf3.setHeight(99);
+		shelf3.setLenth(33);
+		shelf3.setWidth(44);
+		shelfDao.save(shelf3);
 		
-		//findAll
-		shelfs = Lists.newArrayList(shelfDao.findAll());
+		
+		
+		System.out.println("-----------***findByNameLike***--------------------------");
+		
+		//findByNameLike
+		shelfs = shelfDao.findByNameLike("B%");
 		for (Shelf shelf:shelfs) {
 			System.out.println(shelf);
 		}
-		System.out.println("------------------------------------------");
+			
+		
+		System.out.println("------------***END***------------------------------");
 		
 		
 		/*Iterable<Shelf> shelfs = shelfDao.findAll();
