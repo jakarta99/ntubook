@@ -25,7 +25,7 @@ public class Shelf {
 	
 	@Override
 	public String toString() {
-		return "Shelf [id=" + id + ", name=" + name + ", height=" + height +", width="+ width + ",lenth"+ lenth + "]";
+		return "Shelf [id= " + id + ", name= " + name + ", height= " + height +", width= "+ width + ",lenth= "+ lenth + "]";
 	}
 
 	public Long getId() {

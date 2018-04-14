@@ -28,7 +28,7 @@ public class BookDaoTest {
 		//insert
 		Book book1 = new Book(); //class variable = new object
 		book1.setPrice(100);
-		book1.setName("Calculate".toUpperCase());
+		book1.setName("Calculate".toUpperCase()); //變成大寫
 		
 		bookDao.save(book1);
 		
@@ -50,6 +50,7 @@ public class BookDaoTest {
 			System.out.println(book);
 		}
 		System.out.println("===================================================");
+		
 		//update
 		Book book2 = new Book();
 		book2.setId(1L);
