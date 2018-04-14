@@ -7,5 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface MovieDao extends CrudRepository<Movie,Long> {
 
-	public List<Movie> findByNameLike(String namelike);
+	public List<Movie> findByYearLessThanEqual(Integer yearlessthanequal);
 }
