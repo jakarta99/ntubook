@@ -18,10 +18,13 @@ public class Book {
 	private String name;
 	@Column(name = "PRICE")
 	private Integer price;
+	@Column(name = "PROFESSOR")
+	private String professor;
 
+	
 	@Override
 	public String toString() {
-		return "Book [id=" + id + ", name=" + name + ", price=" + price + "]";
+		return "Book [id=" + id + ", name=" + name + ", price=" + price + ", professor=" + professor + "]";
 	}
 
 	public Long getId() {
@@ -47,5 +50,12 @@ public class Book {
 	public void setPrice(Integer price) {
 		this.price = price;
 	}
-
+	
+	public String getProfessor() {
+		return professor;
+	}
+	
+	public void setProfessor(String professor) {
+		this.professor = professor;
+	}
 }

@@ -28,27 +28,63 @@ public class BookDaoTest {
 		//insert
 		Book book1 = new Book(); //class variable = new object
 		book1.setPrice(100);
-		book1.setName("Calculate".toUpperCase()); //變成大寫
+		book1.setName("Java".toUpperCase()); 
+		book1.setProfessor("Allen");
 		
 		bookDao.save(book1);
 		
 		Book book4 = new Book();
-		book4.setPrice(100);
-		book4.setName("Computer");
+		book4.setPrice(300);
+		book4.setName("Java".toLowerCase());
+		book4.setProfessor("Bob");
 		
 		bookDao.save(book4);
 		
 		Book book5 = new Book();
-		book5.setPrice(100);
+		book5.setPrice(500);
 		book5.setName("Java");
+		book5.setProfessor("Cindy");
 		
 		bookDao.save(book5);
 		
 		//findAll
+		books = Lists.newArrayList(bookDao.findAll()); 
+		for (Book book:books) {
+			System.out.println(book);
+		}
+		System.out.println("===================================================");
+		
+		//findOne
 		books = bookDao.findByNameLike("C%");
 		for (Book book:books) {
 			System.out.println(book);
 		}
+		
+		books = bookDao.findByPriceLessThan(100);
+		for (Book book:books) {
+			System.out.println(book);
+		}
+		
+		books = bookDao.findByPriceGreaterThanEqual(100);
+		for (Book book:books) {
+			System.out.println(book);
+		}
+		
+		books = bookDao.findByPriceOrderByNameDesc(100);
+		for (Book book:books) {
+			System.out.println(book);
+		}
+		
+		books = bookDao.findByNameOrderByPriceDesc("Java");
+		for (Book book:books) {
+			System.out.println(book);
+		}
+		
+		books = bookDao.findByNameAndProfessor("Java", "Bob");
+		for (Book book:books) {
+			System.out.println(book);
+		}
+		
 		System.out.println("===================================================");
 		
 		//update
