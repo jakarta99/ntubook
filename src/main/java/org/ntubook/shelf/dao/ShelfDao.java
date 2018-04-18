@@ -9,6 +9,11 @@ import org.springframework.data.repository.CrudRepository;
 public interface ShelfDao extends CrudRepository<Shelf,Long>{
 	
 	public List<Shelf> findByNameLike(String nameLike);
+	public List<Shelf> findByHeightLessThanEqual(Integer heightLessThanEqual);
+	public List<Shelf> findByWedthGreaterThan(Integer wedthGreaterThan);
+	public List<Shelf> findByNameOrderByHeightDesc(String nameOrderByHeight);
+	public List<Shelf> findByLengthOrderByNameDesc(Integer lengthOrderByName);
+	public List<Shelf> findByNameAndDesigner(String name, String designer);
 }
 
 

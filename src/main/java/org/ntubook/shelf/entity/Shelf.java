@@ -16,6 +16,8 @@ public class Shelf {
 	private Long id;
 	@Column(name = "NAME")
 	private String name;
+	@Column(name = "DESIGNER")
+	private String designer;
 	@Column(name = "HEIGHT")
 	private Integer height;
 	@Column(name = "WIDTH")
@@ -25,7 +27,15 @@ public class Shelf {
 	
 	@Override
 	public String toString() {
-		return "Shelf [id= " + id + ", name= " + name + ", height= " + height +", width= "+ width + ",lenth= "+ lenth + "]";
+		return "Shelf [id= " + id + ", name= " + name + ", designer= "+ designer + ", height= " + height +", width= "+ width + ",lenth= "+ lenth + "]";
+	}
+
+	public String getDesigner() {
+		return designer;
+	}
+
+	public void setDesigner(String designer) {
+		this.designer = designer;
 	}
 
 	public Long getId() {
