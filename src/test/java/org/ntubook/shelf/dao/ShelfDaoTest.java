@@ -89,7 +89,7 @@ public class ShelfDaoTest {
 		}
 		
 		System.out.println("-----------***findByWedthGreaterThan***--------------------------");
-		shelfs = shelfDao.findByWedthGreaterThan(50);
+		shelfs = shelfDao.findByWidthGreaterThan(50);
 		for (Shelf shelf:shelfs) {
 			System.out.println(shelf);
 		}
@@ -101,7 +101,7 @@ public class ShelfDaoTest {
 		}
 		
 		System.out.println("-----------***findByLengthOrderByNameDesc***--------------------------");
-		shelfs = shelfDao.findByLengthOrderByNameDesc(33);
+		shelfs = shelfDao.findByLenthOrderByNameDesc(33);
 		for (Shelf shelf:shelfs) {
 			System.out.println(shelf);
 		}

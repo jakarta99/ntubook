@@ -23,12 +23,12 @@ public class BookDaoTest {
 		for (Book book:books) {  //class variable:list
 			System.out.println(book);  //variable
 		}
-		System.out.println("===================================================");
+		System.out.println("------------------------------------------------------");
 		
 		//insert
 		Book book1 = new Book(); //class variable = new object
 		book1.setPrice(100);
-		book1.setName("Java".toUpperCase()); 
+		book1.setName("Calculate".toUpperCase()); 
 		book1.setProfessor("Allen");
 		
 		bookDao.save(book1);
@@ -51,41 +51,45 @@ public class BookDaoTest {
 		books = Lists.newArrayList(bookDao.findAll()); 
 		for (Book book:books) {
 			System.out.println(book);
-		}
-		System.out.println("===================================================");
+		}		
 		
 		//findOne
+		System.out.println("------------------**findByNameLike**------------------");
 		books = bookDao.findByNameLike("C%");
 		for (Book book:books) {
 			System.out.println(book);
 		}
 		
+		System.out.println("---------------**findByPriceLessThan**----------------");
 		books = bookDao.findByPriceLessThan(100);
 		for (Book book:books) {
 			System.out.println(book);
 		}
 		
+		System.out.println("------------**findByPriceGreaterThanEqual**-----------");
 		books = bookDao.findByPriceGreaterThanEqual(100);
 		for (Book book:books) {
 			System.out.println(book);
 		}
 		
+		System.out.println("-----------**findByPriceOrderByNameDesc**-----------");
 		books = bookDao.findByPriceOrderByNameDesc(100);
 		for (Book book:books) {
 			System.out.println(book);
 		}
 		
+		System.out.println("-----------**findByNameOrderByPriceDesc**-----------");
 		books = bookDao.findByNameOrderByPriceDesc("Java");
 		for (Book book:books) {
 			System.out.println(book);
 		}
 		
+		System.out.println("------------**findByNameAndProfessor**--------------");
 		books = bookDao.findByNameAndProfessor("Java", "Bob");
 		for (Book book:books) {
 			System.out.println(book);
 		}
-		
-		System.out.println("===================================================");
+		System.out.println("----------------------------------------------------");
 		
 		//update
 		Book book2 = new Book();
@@ -100,7 +104,7 @@ public class BookDaoTest {
 		for (Book book:books) {
 			System.out.println(book);
 		}
-		System.out.println("===================================================");
+		System.out.println("----------------------------------------------------");
 		
 		//delete
 		Book book3 = new Book();
@@ -112,7 +116,7 @@ public class BookDaoTest {
 		for (Book book:books) {
 			System.out.println(book);
 		}
-		System.out.println("===================================================");
+		System.out.println("----------------------------------------------------");
 		
 		
 		/*
