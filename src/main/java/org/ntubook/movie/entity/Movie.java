@@ -7,8 +7,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Data;
+
 @Entity
 @Table(name = "MOVIE")
+@Data
 public class Movie {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,6 +28,10 @@ public class Movie {
 	@Column(name = "COUNTRY" )
 	private String country;
 	
+	
+	
+	
+	/*
 	@Override
 	public String toString() {
 		return "Movie [id=" + id + ", name=" + name + ", type=" + type + ", year=" + year + ", score=" + score
@@ -79,5 +86,6 @@ public class Movie {
 	public void setCountry(String country) {
 		this.country = country;
 	}
+	*/
 
 }
