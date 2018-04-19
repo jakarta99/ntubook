@@ -10,4 +10,17 @@ public class MovieController {
 	
 	@Autowired
 	private MovieDao movieDao;
+	
+	public String list() {
+		return "/movie/list";
+	}
+	
+	public String edit() {
+		return "/movie/edit";
+		
+	}
+	public String add() {
+		return "/movie/add";
+		
+	}
 }
