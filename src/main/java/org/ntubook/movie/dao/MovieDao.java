@@ -10,7 +10,7 @@ public interface MovieDao extends CrudRepository<Movie,Long> {
 	public List<Movie> findByNameLike(String nameLike);
 	public List<Movie> findByYearLessThanEqual(Integer yearLessThanEqual);
 	public List<Movie> findByTypeLike(String typeLike);
-	public List<Movie> findByScoreMoreThanEqual(Float scoreMoreThanEqual);
+	public List<Movie> findByScoreGreaterThanEqual(Float scoreGreaterThanEqual);
 	public List<Movie> findByCountryLike(String countryLike);
-	public List<Movie> findByYearAndScoreMoreThanEqual(Integer year, Float scoreMoreThanEqual);
+	public List<Movie> findByYearAndScoreGreaterThanEqual(Integer year, Float scoreGreaterThanEqual);
 }

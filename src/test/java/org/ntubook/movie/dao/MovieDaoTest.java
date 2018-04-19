@@ -45,8 +45,8 @@ public class MovieDaoTest {
 			System.out.println(movie);
 		}
 				
-		System.out.println("---------------**findByScoreMoreThanEqual**----------------");
-		movies = movieDao.findByScoreMoreThanEqual(6f);
+		System.out.println("---------------**findByScoreGreaterThanEqual**----------------");
+		movies = movieDao.findByScoreGreaterThanEqual(6f);
 		for (Movie movie:movies) {
 			System.out.println(movie);
 		}
@@ -57,8 +57,8 @@ public class MovieDaoTest {
 			System.out.println(movie);
 		}
 				
-		System.out.println("---------------**findByYearAndScoreMoreThanEqual**----------------");
-		movies = movieDao.findByYearAndScoreMoreThanEqual(2017, 6f);
+		System.out.println("---------------**findByYearAndScoreGreaterThanEqual**----------------");
+		movies = movieDao.findByYearAndScoreGreaterThanEqual(2017, 6f);
 		for (Movie movie:movies) {
 			System.out.println(movie);
 		}
