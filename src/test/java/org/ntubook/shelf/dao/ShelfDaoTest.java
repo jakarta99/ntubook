@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class ShelfDaoTest {
 	
-	@Autowired
+	@Autowired//DaoTest需要Dao，＠Autowired的意思是讓Springfamework幫抓Dao
 	private ShelfDao shelfDao;
 	
 	@Test
@@ -107,7 +107,7 @@ public class ShelfDaoTest {
 		}
 		
 		System.out.println("-----------***findByNameAndDesigner***--------------------------");
-		shelfs = shelfDao.findByNameAndDesigner("B%", "W%");
+		shelfs = shelfDao.findByNameAndDesigner("BILLY", "William");
 		for (Shelf shelf:shelfs) {
 			System.out.println(shelf);
 		}	
