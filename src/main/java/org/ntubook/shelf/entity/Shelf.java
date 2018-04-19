@@ -7,8 +7,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Data;
+
 @Entity
 @Table(name = "SHELF")
+@Data //lombok.jar APT技術
 public class Shelf {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,7 +28,7 @@ public class Shelf {
 	@Column(name = "LENTH")
 	private Integer lenth;
 	
-	@Override
+	/*@Override
 	public String toString() {
 		return "Shelf [id= " + id + ", name= " + name + ", designer= "+ designer + ", height= " + height +", width= "+ width + ",lenth= "+ lenth + "]";
 	}
@@ -77,7 +80,7 @@ public class Shelf {
 	public void setLenth(Integer lenth) {
 		this.lenth = lenth;
 	}
-	
+	*/
 	
 	
 	
