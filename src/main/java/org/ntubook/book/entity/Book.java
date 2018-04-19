@@ -7,8 +7,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Data;
+
 @Entity
 @Table(name = "BOOK")
+@Data //lombok
 public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,7 +24,7 @@ public class Book {
 	@Column(name = "PROFESSOR")
 	private String professor;
 
-	
+	/*
 	@Override
 	public String toString() {
 		return "Book [id=" + id + ", name=" + name + ", price=" + price + ", professor=" + professor + "]";
@@ -58,4 +61,5 @@ public class Book {
 	public void setProfessor(String professor) {
 		this.professor = professor;
 	}
+	*/
 }
