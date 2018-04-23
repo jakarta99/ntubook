@@ -11,7 +11,7 @@
 
 	<h1>Book List</h1>
 	
-	<input type="button" id="addButton" name="addButton" value="Add..."/>
+	<input type="button" id="addButton" name="addButton" value="Add..." onclick="add()"/>
 	<table border='1'>
 		<thead>
 			<tr>
@@ -29,23 +29,49 @@
 	<script>
 	$(function() {
 		// after document ready to load data from Server
+		loadData();
+		
+	});
+	
+	function loadData() {
 		$.ajax({
-			
 			url: '${pageContext.request.contextPath}/books',
 			type: 'GET',
 			dataType: 'json',
 			
-		}).done(function(response){
+		}).always(function(response){
+			$("#tableBody").empty();
+			
 			$(response).each(function(i, data) {
 				$("#tableBody").append("<tr>")
-							.append("<td><input type='button' value='Edit..'> <input type='button' value='Del..'></td>")
+							.append("<td><input type='button' value='Edit..' onclick='edit("+data.id+")'> <input type='button' value='Del..' onclick='del("+data.id+")'></td>")
 							.append("<td>"+data.name+"</td>")
 							.append("<td>"+data.price+"</td>")
 							.append("<td>"+data.professor+"</td>")
 			});
 		});
-		
-	});
+	}
+	
+	function add() {
+		document.location.href='${pageContext.request.contextPath}/books/add'
+	}
+	
+	function edit(id) {
+		document.location.href='${pageContext.request.contextPath}/books/edit'
+	}
+	
+	function del(id) {
+		$.ajax({
+			url: '${pageContext.request.contextPath}/books/'+id,
+			type: 'DELETE',
+			dataType: 'json',
+			
+		}).always(function(response){
+			alert('Already deleted');
+			loadData();
+		});
+	}
+	
 	</script>
 	
 	

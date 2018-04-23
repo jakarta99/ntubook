@@ -7,7 +7,9 @@ import org.ntubook.book.dao.BookDao;
 import org.ntubook.book.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -40,5 +42,13 @@ public class BookController {
 		return Lists.newArrayList(bookDao.findAll());
 	}
 	
+	
+	@DeleteMapping("/{id}")
+	@ResponseBody
+	public String del(@PathVariable("id") Long id) {
+		bookDao.deleteById(id);
+		
+		return "OK";
+	}
 	
 }
