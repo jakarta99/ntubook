@@ -14,7 +14,7 @@ import lombok.Data;
 @Data
 public class Movie {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private Long id;
 	@Column(name = "NAME")

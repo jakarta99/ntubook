@@ -14,7 +14,7 @@ import lombok.Data;
 @Data //lombok.jar APT技術
 public class Shelf {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private Long id;
 	@Column(name = "NAME")

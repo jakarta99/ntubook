@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Table(name = "Music")
 public class Music {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private Long id;
 	@Column(name = "SONGNAME")
