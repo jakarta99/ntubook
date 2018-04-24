@@ -6,6 +6,7 @@ import org.ntubook.book.entity.Book;
 import org.ntubook.common.ajax.AjaxResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,8 +37,11 @@ public class BookController {
 		return "/bookAdd";
 	}
 	
-	@RequestMapping("/edit")
-	public String editPage() {
+	@RequestMapping("/edit/{id}")
+	public String editPage(@PathVariable("id") Long id, Model model) {
+		
+		model.addAttribute("model", bookDao.findById(id).get());
+		
 		return "/bookEdit";
 	}
 	
@@ -82,10 +86,17 @@ public class BookController {
 	@ResponseBody
 	public AjaxResponse update(@RequestBody Book book) {
 		
+		log.debug("{}", book);
+		
 		AjaxResponse ajaxResponse = new AjaxResponse();
 		
-		log.debug("{}", book);
-		bookDao.save(book);
+		Book dbBook = bookDao.findById(book.getId()).get();
+		
+		dbBook.setName(book.getName());
+		dbBook.setPrice(book.getPrice());
+		dbBook.setProfessor(book.getProfessor());
+		
+		bookDao.save(dbBook);
 		
 		return ajaxResponse;
 	}

@@ -53,11 +53,11 @@
 	}
 	
 	function add() {
-		document.location.href='${pageContext.request.contextPath}/books/add'
+		document.location.href='${pageContext.request.contextPath}/books/add';
 	}
 	
 	function edit(id) {
-		document.location.href='${pageContext.request.contextPath}/books/edit'
+		document.location.href='${pageContext.request.contextPath}/books/edit/'+id;
 	}
 	
 	function del(id) {
