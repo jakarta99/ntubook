@@ -42,7 +42,7 @@
 		}).always(function(response){
 			$("#tableBody").empty();
 			
-			$(response).each(function(i, data) {
+			$(response.data).each(function(i, data) {
 				$("#tableBody").append("<tr>")
 							.append("<td><input type='button' value='Edit..' onclick='edit("+data.id+")'> <input type='button' value='Del..' onclick='del("+data.id+")'></td>")
 							.append("<td>"+data.name+"</td>")
@@ -62,13 +62,16 @@
 	
 	function del(id) {
 		$.ajax({
-			url: '${pageContext.request.contextPath}/books/'+id,
+			url: '${pageContext.request.contextPath}/books',
 			type: 'DELETE',
+			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',
-			
-		}).always(function(response){
-			alert('Already deleted');
+			data: JSON.stringify({'id':id}),
+		}).done(function(response){
+			alert('success');
 			loadData();
+		}).fail(function(response){
+			alert('error');
 		});
 	}
 	
