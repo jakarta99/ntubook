@@ -39,7 +39,7 @@
 			type: 'GET',
 			dataType: 'json',
 			
-		}).always(function(response){
+		}).always(function(response){ 
 			$("#tableBody").empty();
 			
 			$(response.data).each(function(i, data) {
@@ -61,7 +61,7 @@
 	}
 	
 	function del(id) {
-		$.ajax({
+		$.ajax({ 
 			url: '${pageContext.request.contextPath}/books',
 			type: 'DELETE',
 			contentType: 'application/json; charset=utf-8',
