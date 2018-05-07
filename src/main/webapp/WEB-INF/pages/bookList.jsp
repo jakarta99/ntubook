@@ -42,12 +42,12 @@
 		}).always(function(response){
 			$("#tableBody").empty();
 			
-			$(response.data).each(function(i, data) {
+			$(response.data).each(function(i, o) {
 				$("#tableBody").append("<tr>")
-							.append("<td><input type='button' value='Edit..' onclick='edit("+data.id+")'> <input type='button' value='Del..' onclick='del("+data.id+")'></td>")
-							.append("<td>"+data.name+"</td>")
-							.append("<td>"+data.price+"</td>")
-							.append("<td>"+data.professor+"</td>")
+							.append("<td><input type='button' value='Edit..' onclick='edit("+o.id+")'> <input type='button' value='Del..' onclick='del("+o.id+")'></td>")
+							.append("<td>"+o.name+"</td>")
+							.append("<td>"+o.price+"</td>")
+							.append("<td>"+o.professor+"</td>")
 			});
 		});
 	}
