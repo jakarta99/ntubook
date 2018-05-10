@@ -22,7 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Controller
 @RequestMapping("/shelfs")
-public class ShelfController {
+public class ShelfController<Shelf> {
 	
 	@Autowired
 	private ShelfDao shelfDao;
@@ -72,7 +72,7 @@ public class ShelfController {
 	
 	@PostMapping
 	@ResponseBody
-	public AjaxResponse insert(@RequestBody Shelf shelf) {
+	public AjaxResponse insert(@RequestBody SHELF shelf) {
 		
 		AjaxResponse ajaxResponse = new AjaxResponse();
 		
