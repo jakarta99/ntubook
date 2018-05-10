@@ -7,19 +7,27 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.ntubook.book.entity.Book;
+
+import lombok.Data;
+
 @Entity
 @Table(name = "Music")
+@Data //lombok
 public class Music {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private Long id;
-	@Column(name = "SONGNAME")
-	private String songname;
-	@Column(name = "MUSICIAN")
-	private String musician;
+	@Column(name = "NAME")
+	private String name;
+	@Column(name = "PRICE")
+	private String price;
 	@Column(name = "LENGTH")
 	private Integer length;
+	
+	
+	/*
 	public Long getId() {
 		return id;
 	}
@@ -43,5 +51,5 @@ public class Music {
 	}
 	public void setLength(Integer length) {
 		this.length = length;
-	}
+	}*/
 }	
