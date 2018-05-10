@@ -34,7 +34,7 @@ public class ShelfDaoTest {
 		shelf1.setName("BRIMNES");
 		shelf1.setDesigner("Henrry");
 		shelf1.setHeight(100);
-		shelf1.setLenth(33);
+		shelf1.setLength(33);
 		shelf1.setWidth(50);
 		shelfDao.save(shelf1);
 		
@@ -43,7 +43,7 @@ public class ShelfDaoTest {
 		shelf2.setDesigner("Pull");
 		shelf2.setName("HOFORS");
 		shelf2.setHeight(80);
-		shelf2.setLenth(33);
+		shelf2.setLength(33);
 		shelf2.setWidth(88);
 		shelfDao.save(shelf2);
 		
@@ -52,7 +52,7 @@ public class ShelfDaoTest {
 		shelf3.setName("BILLY");
 		shelf3.setDesigner("William");
 		shelf3.setHeight(99);
-		shelf3.setLenth(33);
+		shelf3.setLength(33);
 		shelf3.setWidth(44);
 		shelfDao.save(shelf3);
 		
@@ -61,7 +61,7 @@ public class ShelfDaoTest {
 		shelf4.setName("BOMNUM");
 		shelf4.setDesigner("Wendy");
 		shelf4.setHeight(120);
-		shelf4.setLenth(15);
+		shelf4.setLength(15);
 		shelf4.setWidth(44);
 		shelfDao.save(shelf4);
 		
@@ -101,7 +101,7 @@ public class ShelfDaoTest {
 		}
 		
 		System.out.println("-----------***findByLengthOrderByNameDesc***--------------------------");
-		shelfs = shelfDao.findByLenthOrderByNameDesc(33);
+		shelfs = shelfDao.findByLengthOrderByNameDesc(33);
 		for (Shelf shelf:shelfs) {
 			System.out.println(shelf);
 		}

@@ -25,8 +25,8 @@ public class Shelf {
 	private Integer height;
 	@Column(name = "WIDTH")
 	private Integer width;
-	@Column(name = "LENTH")
-	private Integer lenth;
+	@Column(name = "LENGTH")
+	private Integer length;
 	
 	/*@Override
 	public String toString() {
