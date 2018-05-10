@@ -15,8 +15,8 @@
 			<thead>
 				<tr>
 					<th>Function</th>
-					<th></th>
-					<th></th>
+					<th>Name</th>
+					<th>Designer</th>
 					<th></th>
 					<th></th>
 					
