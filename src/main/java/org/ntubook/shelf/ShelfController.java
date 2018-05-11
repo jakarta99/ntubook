@@ -5,6 +5,7 @@ package org.ntubook.shelf;
 import org.assertj.core.util.Lists;
 import org.ntubook.common.ajax.AjaxResponse;
 import org.ntubook.shelf.dao.ShelfDao;
+import org.ntubook.shelf.entity.Shelf;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -72,7 +74,7 @@ public class ShelfController<Shelf> {
 	
 	@PostMapping
 	@ResponseBody
-	public AjaxResponse insert(@RequestBody SHELF shelf) {
+	public AjaxResponse insert(@RequestBody Shelf shelf) {
 		
 		AjaxResponse ajaxResponse = new AjaxResponse();
 		
@@ -91,10 +93,10 @@ public class ShelfController<Shelf> {
 		
 		AjaxResponse ajaxResponse = new AjaxResponse();
 		
-		Shelf dbShelf = shelfDao.findById(shelf.getId()).get();
+		Shelf dbShelf = shelfDao.findById(shelf..getId()).get();
 		
 		dbShelf.setName(shelf.getName());
-		dbShelf.setDesigner(shelf.getDesigner);
+		dbShelf.setDesigner(shelf.getDesigner());
 		dbShelf.setHeight(shelf.getHeight());
 		dbShelf.setWidth(shelf.getWidth());
 		dbShelf.setLength(shelf.getLength());
