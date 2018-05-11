@@ -24,7 +24,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Controller
 @RequestMapping("/shelfs")
-public class ShelfController<Shelf> {
+public class ShelfController {
 	
 	@Autowired
 	private ShelfDao shelfDao;
@@ -67,7 +67,7 @@ public class ShelfController<Shelf> {
 		
 		AjaxResponse ajaxResponse = new AjaxResponse();
 		
-		ShelfDao.deleteById(shelf.getId());
+		shelfDao.deleteById(shelf.getId());
 		
 		return ajaxResponse;
 	}
@@ -93,7 +93,7 @@ public class ShelfController<Shelf> {
 		
 		AjaxResponse ajaxResponse = new AjaxResponse();
 		
-		Shelf dbShelf = shelfDao.findById(shelf..getId()).get();
+		Shelf dbShelf = shelfDao.findById(shelf.getId()).get();
 		
 		dbShelf.setName(shelf.getName());
 		dbShelf.setDesigner(shelf.getDesigner());
