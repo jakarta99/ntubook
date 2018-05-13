@@ -55,6 +55,7 @@
 	
 	});
 	
+	
 	function loadData() {
 		$.ajax({
 			url : '${pageContext.request.contextPath}/books',
