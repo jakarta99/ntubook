@@ -17,13 +17,70 @@
 					<th>Function</th>
 					<th>Name</th>
 					<th>Designer</th>
-					<th></th>
-					<th></th>
-					
+					<th>Height</th>
+					<th>Width</th>
+					<th>Length</th>
 				<tr>
 			</thead>
+			
+			<tbody id="tableBody"></tbody>
 	
 		</table>
+		
+		<script>
+		$(function() {
+			
+			loadData();
+			
+		});
+		
+		function loadData() {
+			$.ajax({
+				url: '${pageContext.request.contextPath}/shelfs',
+				type: 'GET',
+				dataType: 'json',
+				
+			}).always(function(response){ 
+				$("#tableBody").empty();
+				
+				$(response.data).each(function(i, o) {
+					$("#tableBody").append("<tr>")
+								.append("<td><input type='button' value='Edit..' onclick='edit("+o.id+")'> <input type='button' value='Del..' onclick='del("+o.id+")'></td>")
+								.append("<td>"+o.name+"</td>")
+								.append("<td>"+o.designer+"</td>")
+								.append("<td>"+o.height+"</td>")
+								.append("<td>"+o.width+"</td>")
+								.append("<td>"+o.length+"</td>")
+				});
+			});
+		}
+		
+		function add() {
+			document.location.href='${pageContext.request.contextPath}/shelfs/add';
+		}
+		
+		function edit(id) {
+			document.location.href='${pageContext.request.contextPath}/shelfs/edit/'+id;
+		}
+		
+		function del(id) {
+			$.ajax({ 
+				url: '${pageContext.request.contextPath}/shelfs',
+				type: 'DELETE',
+				contentType: 'application/json; charset=utf-8',
+				dataType: 'json',
+				data: JSON.stringify({'id':id}),
+			}).done(function(response){
+				alert('success');
+				loadData();
+			}).fail(function(response){
+				alert('error');
+			});
+		}
+
+		
+		</script>
+		
 	
 	
 </body>

@@ -27,8 +27,8 @@ $(function(){
 		$.ajax({
 			url: '${pageContext.request.contextPath}/books',
 			type: 'PUT',
-			contentType: 'application/json; charset=utf-8', //?
-			data: JSON.stringify($("#theForm").serializeObject()), //?
+			contentType: 'application/json; charset=utf-8',
+			data: JSON.stringify($("#theForm").serializeObject()),
 			dataType: 'json',
 			
 		}).done(function(response){
@@ -42,8 +42,10 @@ $(function(){
 	$("#cancelButton").click(function() {
 		document.location.href="${pageContext.request.contextPath}/books/list";
 	});
-});
+	
+	
 
+});
 
 jQuery.fn.serializeObject = function() {
   var arrayData, objectData;

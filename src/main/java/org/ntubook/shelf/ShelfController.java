@@ -1,9 +1,11 @@
-package org.ntubook.book.web;
+package org.ntubook.shelf;
+
+
 
 import org.assertj.core.util.Lists;
-import org.ntubook.book.dao.BookDao;
-import org.ntubook.book.entity.Book;
 import org.ntubook.common.ajax.AjaxResponse;
+import org.ntubook.shelf.dao.ShelfDao;
+import org.ntubook.shelf.entity.Shelf;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,42 +18,43 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Controller
-@RequestMapping("/books")
-public class BookController {
-
-	@Autowired
-	private BookDao bookDao;
+@RequestMapping("/shelfs")
+public class ShelfController {
 	
+	@Autowired
+	private ShelfDao shelfDao;
 	
 	@RequestMapping("/list")
 	public String listPage() {
-		return "/bookList";
+		return "/shelfList";
 	}
 	
 	@RequestMapping("/add")
 	public String addPage() {
-		return "/bookAdd";
+		return "/shelfAdd";
+		
 	}
 	
 	@RequestMapping("/edit/{id}")
 	public String editPage(@PathVariable("id") Long id, Model model) {
 		
-		model.addAttribute("model", bookDao.findById(id).get());
+		model.addAttribute("model", shelfDao.findById(id).get());
 		
-		return "/bookEdit";
+		return "/shelfEdit";
+		
 	}
-	
 	@GetMapping
 	@ResponseBody
 	public AjaxResponse query() {
 		
 		AjaxResponse ajaxResponse = new AjaxResponse();
 		
-		ajaxResponse.setData(Lists.newArrayList(bookDao.findAll()));
+		ajaxResponse.setData(Lists.newArrayList(shelfDao.findAll()));
 		ajaxResponse.setMessages(null);
 		
 		return ajaxResponse;
@@ -60,23 +63,23 @@ public class BookController {
 	
 	@DeleteMapping
 	@ResponseBody
-	public AjaxResponse del(@RequestBody Book book) {
+	public AjaxResponse del(@RequestBody Shelf shelf) {
 		
 		AjaxResponse ajaxResponse = new AjaxResponse();
 		
-		bookDao.deleteById(book.getId());
+		shelfDao.deleteById(shelf.getId());
 		
 		return ajaxResponse;
 	}
 	
 	@PostMapping
 	@ResponseBody
-	public AjaxResponse insert(@RequestBody Book book) {
+	public AjaxResponse insert(@RequestBody Shelf shelf) {
 		
 		AjaxResponse ajaxResponse = new AjaxResponse();
 		
-		log.debug("{}", book);
-		bookDao.save(book);
+		log.debug("{}", shelf);
+		shelfDao.save(shelf);
 		
 		return ajaxResponse;
 	}
@@ -84,21 +87,26 @@ public class BookController {
 	
 	@PutMapping
 	@ResponseBody
-	public AjaxResponse update(@RequestBody Book book) {
+	public AjaxResponse update(@RequestBody Shelf shelf) {
 		
-		log.debug("{}", book);
+		log.debug("{}", shelf);
 		
 		AjaxResponse ajaxResponse = new AjaxResponse();
 		
-		Book dbBook = bookDao.findById(book.getId()).get();
+		Shelf dbShelf = shelfDao.findById(shelf.getId()).get();
 		
-		dbBook.setName(book.getName());
-		dbBook.setPrice(book.getPrice());
-		dbBook.setProfessor(book.getProfessor());
+		dbShelf.setName(shelf.getName());
+		dbShelf.setDesigner(shelf.getDesigner());
+		dbShelf.setHeight(shelf.getHeight());
+		dbShelf.setWidth(shelf.getWidth());
+		dbShelf.setLength(shelf.getLength());
 		
-		bookDao.save(dbBook);
+		shelfDao.save(dbShelf);
 		
 		return ajaxResponse;
 	}
+
 	
+	
+
 }

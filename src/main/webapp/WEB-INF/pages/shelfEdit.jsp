@@ -9,12 +9,14 @@
 </head>
 <body>
 
-<h1>Book Add</h1>
+<h1>Shelf Edit</h1>
 
 <form id="theForm" name="theForm">
 Name : <input type="text" name="name"/> <br/>
-Price : <input type="text" name="price"/> <br/>
-Professor : <input type="text" name="professor"/> <br/>
+Designer : <input type="text" name="designer"/> <br/>
+Height : <input type="text" name="height"/> <br/>
+Width : <input type="text" name="width"/> <br/>
+Length : <input type="text" name="length"/> <br/>
 
 <input type="button" id="saveButton" value="Save.." /> 
 <input type="button" id="cancelButton" value="Cancel.." />
@@ -25,7 +27,7 @@ $(function(){
 	$("#saveButton").click(function() {
 		$.ajax({
 			url: '${pageContext.request.contextPath}/books',
-			type: 'POST',
+			type: 'PUT',
 			contentType: 'application/json; charset=utf-8',
 			data: JSON.stringify($("#theForm").serializeObject()),
 			dataType: 'json',
