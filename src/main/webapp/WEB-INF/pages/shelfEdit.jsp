@@ -27,7 +27,7 @@ Length : <input type="text" name="length" value="${model.length}"/> <br/>
 $(function(){
 	$("#saveButton").click(function() {
 		$.ajax({
-			url: '${pageContext.request.contextPath}/books',
+			url: '${pageContext.request.contextPath}/shelfs',
 			type: 'PUT',
 			contentType: 'application/json; charset=utf-8',
 			data: JSON.stringify($("#theForm").serializeObject()),
@@ -42,7 +42,7 @@ $(function(){
 	});
 	
 	$("#cancelButton").click(function() {
-		document.location.href="${pageContext.request.contextPath}/books/list";
+		document.location.href="${pageContext.request.contextPath}/shelfs/list";
 	});
 	
 	

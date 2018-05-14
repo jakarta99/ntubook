@@ -11,8 +11,8 @@
 <body>
 	<h1>Shelf List</h1>
 	<input type="button" id="addButton" name="addButton" value="Add" onclick="add()"/>
-		<table border='1'>
-			<thead>
+		<table >
+			<thead class="thead-dark">
 				<tr>
 					<th>Function</th>
 					<th>Name</th>
