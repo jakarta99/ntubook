@@ -12,11 +12,12 @@
 <h1>Shelf Edit</h1>
 
 <form id="theForm" name="theForm">
-Name : <input type="text" name="name"/> <br/>
-Designer : <input type="text" name="designer"/> <br/>
-Height : <input type="text" name="height"/> <br/>
-Width : <input type="text" name="width"/> <br/>
-Length : <input type="text" name="length"/> <br/>
+<input type="hidden" name="id" value="${model.id }"/>
+Name : <input type="text" name="name" value="${model.name}"/> <br/>
+Designer : <input type="text" name="designer" value="${model.designer}"/> <br/>
+Height : <input type="text" name="height" value="${model.height}"/> <br/>
+Width : <input type="text" name="width" value="${model.width}"/> <br/>
+Length : <input type="text" name="length" value="${model.length}"/> <br/>
 
 <input type="button" id="saveButton" value="Save.." /> 
 <input type="button" id="cancelButton" value="Cancel.." />
@@ -26,7 +27,7 @@ Length : <input type="text" name="length"/> <br/>
 $(function(){
 	$("#saveButton").click(function() {
 		$.ajax({
-			url: '${pageContext.request.contextPath}/books',
+			url: '${pageContext.request.contextPath}/shelfs',
 			type: 'PUT',
 			contentType: 'application/json; charset=utf-8',
 			data: JSON.stringify($("#theForm").serializeObject()),
@@ -41,7 +42,7 @@ $(function(){
 	});
 	
 	$("#cancelButton").click(function() {
-		document.location.href="${pageContext.request.contextPath}/books/list";
+		document.location.href="${pageContext.request.contextPath}/shelfs/list";
 	});
 	
 	
