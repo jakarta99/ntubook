@@ -6,7 +6,7 @@ You can find JSPs in /src/webapp/WEB-INF/pages/*.jsp
 
 	<li> <a href='${pageContext.request.contextPath}/books/list'>Book Admin</a></li>
 	 
-	<li> <a href='${pageContext.request.contextPath}/books/list'>Book Admin</a></li> 
+	<li> <a href='${pageContext.request.contextPath}/shelfs/list'>Shelf Admin</a></li> 
 	<li> <a href='${pageContext.request.contextPath}/music/list'>Music Admin</a></li>
 
 
