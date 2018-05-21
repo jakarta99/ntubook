@@ -8,17 +8,74 @@
 </head>
 <body>
 
-	<h1>Movie Add</h1>
+<h1>Movie Edit</h1>
+
 <form id="theForm" name="theForm">
 <input type="hidden" name="id" value="${model.id }"/>
 Name : <input type="text" name="name" value="${model.name}"/> <br/>
-Price : <input type="text" name="price" value="${model.price}"/> <br/>
-Professor : <input type="text" name="professor" value="${model.professor}"/> <br/>
+Type : <input type="text" name="type" value="${model.type}"/> <br/>
+Year : <input type="text" name="year" value="${model.year}"/> <br/>
 
-<input type="button" id="saveButton" value="Save.." /> 
-<input type="button" id="cancelButton" value="Cancel.." />
+<input type="button" id="saveButton" value="Save" /> 
+<input type="button" id="cancelButton" value="Cancel" />
 </form>
 
+<script>
+$(function(){
+	$("#saveButton").click(function() {
+		$.ajax({
+			url: '${pageContext.request.contextPath}/movies',
+			type: 'PUT',
+			contentType: 'application/json; charset=utf-8',
+			data: JSON.stringify($("#theForm").serializeObject()),
+			dataType: 'json',
+			
+		}).done(function(response){
+			alert("SUCCESS");
+			document.location.reload();
+			document.location.href="${pageContext.request.contextPath}/movies/list";
+		}).fail(function(response){
+			alert("ERROR");
+		});
+	});
+	
+	$("#cancelButton").click(function() {
+		document.location.href="${pageContext.request.contextPath}/movies/list";
+	});
+	
+	
+
+});
+
+jQuery.fn.serializeObject = function() { 
+  var arrayData, objectData;
+  arrayData = this.serializeArray();
+  objectData = {};
+
+  $.each(arrayData, function() {
+    var value;
+
+    if (this.value != null) {
+      value = this.value;
+    } else {
+      value = '';
+    }
+
+    if (objectData[this.name] != null) {
+      if (!objectData[this.name].push) {
+        objectData[this.name] = [objectData[this.name]];
+      }
+
+      objectData[this.name].push(value);
+    } else {
+      objectData[this.name] = value;
+    }
+  });
+
+  return objectData;
+};
+
+</script>
 
 
 </body>
