@@ -32,16 +32,16 @@
 </head>
 <body>
 
-<h1>Music Edit</h1>
+<h1 align="center">Music Edit</h1>
 
-<form id="theForm" name="theForm">
+<form id="theForm" name="theForm" align="center">
 <input type="hidden" name="id" value="${model.id }"/>
 Name : <input type="text" name="name" value="${model.name}"/> <br/>
 Price : <input type="text" name="price" value="${model.price}"/> <br/>
 Length : <input type="text" name="length" value="${model.length}"/> <br/>
 
-<input type="button" id="saveButton" value="Save.." /> 
-<input type="button" id="cancelButton" value="Cancel.." />
+<input type="button" id="saveButton" class="btn btn-primary" value="Save.." /> 
+<input type="button" id="cancelButton" class="btn btn-danger"value="Cancel.." />
 </form>
 
 <script>
