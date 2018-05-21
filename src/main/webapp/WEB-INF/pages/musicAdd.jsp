@@ -33,15 +33,15 @@
 
 <body>
 
-<h1>Music Add</h1>
+<h1 align="center">Music Add</h1>
 
-<form id="theForm" name="theForm">
+<form id="theForm" name="theForm" align="center">
 Name : <input type="text" name="name"/> <br/>
 Price : <input type="text" name="price"/> <br/>
 Length : <input type="text" name="length"/> <br/>
 
-<input type="button" id="saveButton" value="Save.." /> 
-<input type="button" id="cancelButton" value="Cancel.." />
+<input type="button" id="saveButton" class="btn btn-primary" value="Save.." /> 
+<input type="button" id="cancelButton" class="btn btn-danger" value="Cancel.." />
 </form>
 
 <script>

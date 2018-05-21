@@ -34,22 +34,25 @@
 <body>
 
 	<h1>Music List</h1>
-
-	<input type="button" class="btn btn-primary" id="addButton"
-		name="addButton" value="Add..." onclick="add()" />
-	<table class="table table-striped">
+	<input type="button"  class="btn btn-primary" id="addButton" name="addButton" value="Add..." onclick="add()" />
+    
+	<table class="table table-hover">
 		<thead>
-			<tr>
-				<th>Function</th>
-				<th>Name</th>
-				<th>Price</th>
-				<th>Length</th>
+			<tr class="bg-warning">
+		    	<th scope="col">Name</th>
+		    	<th scope="col">Price</th>
+		    	<th scope="col">Length</th>
+		    	<th scope="col">   </th>
 			</tr>
 		</thead>
 		<tbody id="tableBody">
 
 		</tbody>
 	</table>
+	
+	
+	
+	
     <script>
 	$(function() {
 		// after document ready to load data from Server
@@ -68,10 +71,10 @@
 		$(response.data).each(function(i, o) {
 			$("#tableBody")
 				.append("<tr>")
-				.append("<td><input type='button' value='Edit..' class='btn btn-default btn-sm' onclick='edit("	+ o.id + ")'> <input type='button' class='btn btn-danger btn-sm'  value='Del..' onclick='del("+ o.id + ")'></td>")
 				.append("<td>"+ o.name + "</td>")
 				.append("<td>"+ o.price + "</td>")
 				.append("<td>"+ o.length + "</td>")
+				.append("<td><input type='button' value='Edit..' class='btn btn-info btn-sm' onclick='edit("	+ o.id + ")'> <input type='button' class='btn btn-danger btn-sm'  value='Del..' onclick='del("+ o.id + ")'></td>")
 			});
 		});
 	}
