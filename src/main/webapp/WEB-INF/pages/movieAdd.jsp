@@ -31,6 +31,7 @@ $(function(){
 		}).done(function(response){
 			alert("SUCCESS");
 			document.location.reload();
+			document.location.href="${pageContext.request.contextPath}/movies/list";
 		}).fail(function(response){
 			alert("ERROR");
 		});

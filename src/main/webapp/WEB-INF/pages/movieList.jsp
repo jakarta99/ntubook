@@ -17,10 +17,10 @@
 	<table border='1'>
 		<thead>
 			<tr>
+				<th>Function</th>
 				<th>Name</th>
 				<th>Type</th>
 				<th>Year</th>
-				<th>Function</th>
 			</tr>
 		</thead>
 		<tbody id = "movieBody">
