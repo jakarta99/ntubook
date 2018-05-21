@@ -57,16 +57,16 @@
 	}
 	
 	function edit(id) {
-		document.location.href='${pageContext.request.contextPath}/books/edit/'+id;
+		document.location.href='${pageContext.request.contextPath}/books/edit/'+id;  //根目錄:/books/edit
 	}
 	
 	function del(id) {
 		$.ajax({ 
 			url: '${pageContext.request.contextPath}/books',
 			type: 'DELETE',
-			contentType: 'application/json; charset=utf-8',
+			contentType: 'application/json; charset=utf-8',    //content type的一種
 			dataType: 'json',
-			data: JSON.stringify({'id':id}),
+			data: JSON.stringify({'id':id}),    //-->轉成字串
 		}).done(function(response){
 			alert('success');
 			loadData();
@@ -76,6 +76,10 @@
 	}
 	
 	</script>
+	
+	
+	
+	
 	
 	
 </body>

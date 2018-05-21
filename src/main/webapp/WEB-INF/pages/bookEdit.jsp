@@ -47,7 +47,7 @@ $(function(){
 
 });
 
-jQuery.fn.serializeObject = function() {
+jQuery.fn.serializeObject = function() { 
   var arrayData, objectData;
   arrayData = this.serializeArray();
   objectData = {};
