@@ -61,7 +61,7 @@
 	});
 	
 	function loadData() {
-		$.ajax({
+		$.ajax({   
 			url : '${pageContext.request.contextPath}/music',
 			type : 'GET',
 			dataType : 'json',

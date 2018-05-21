@@ -37,7 +37,7 @@
 		$.ajax({
 			url: '${pageContext.request.contextPath}/books',
 			type: 'GET',
-			dataType: 'json',
+			dataType: 'json',  
 			
 		}).always(function(response){ 
 			$("#tableBody").empty();
