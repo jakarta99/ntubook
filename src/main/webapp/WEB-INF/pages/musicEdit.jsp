@@ -30,18 +30,18 @@
 <link rel="stylesheet"
 	href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 </head>
-
 <body>
 
-<h1 align="center">Music Add</h1>
+<h1 align="center">Music Edit</h1>
 
 <form id="theForm" name="theForm" align="center">
-Name : <input type="text" name="name"/> <br/>
-Price : <input type="text" name="price"/> <br/>
-Length : <input type="text" name="length"/> <br/>
+<input type="hidden" name="id" value="${model.id }"/>
+Name : <input type="text" name="name" value="${model.name}"/> <br/>
+Price : <input type="text" name="price" value="${model.price}"/> <br/>
+Length : <input type="text" name="length" value="${model.length}"/> <br/>
 
 <input type="button" id="saveButton" class="btn btn-primary" value="Save.." /> 
-<input type="button" id="cancelButton" class="btn btn-danger" value="Cancel.." />
+<input type="button" id="cancelButton" class="btn btn-danger"value="Cancel.." />
 </form>
 
 <script>
@@ -49,14 +49,14 @@ $(function(){
 	$("#saveButton").click(function() {
 		$.ajax({
 			url: '${pageContext.request.contextPath}/music',
-			type: 'POST',
+			type: 'PUT',
 			contentType: 'application/json; charset=utf-8', 
 			data: JSON.stringify($("#theForm").serializeObject()), 
 			dataType: 'json',
 			
 		}).done(function(response){
 			alert("success");
-			document.location.reload(); 
+			document.location.reload();
 			document.location.href="${pageContext.request.contextPath}/music/list";
 		}).fail(function(response){
 			alert("error");
@@ -66,40 +66,29 @@ $(function(){
 	$("#cancelButton").click(function() {
 		document.location.href="${pageContext.request.contextPath}/music/list";
 	});
-	
-	
-
 });
-
-
 jQuery.fn.serializeObject = function() {
   var arrayData, objectData;
   arrayData = this.serializeArray();
   objectData = {};
-
   $.each(arrayData, function() {
     var value;
-
     if (this.value != null) {
       value = this.value;
     } else {
       value = '';
     }
-
     if (objectData[this.name] != null) {
       if (!objectData[this.name].push) {
         objectData[this.name] = [objectData[this.name]];
       }
-
       objectData[this.name].push(value);
     } else {
       objectData[this.name] = value;
     }
   });
-
   return objectData;
 };
-
 </script>
 
 </body>
