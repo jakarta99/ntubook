@@ -33,7 +33,6 @@ $(function(){
 		}).done(function(response){
 			alert("success");
 			document.location.reload();
-			document.location.href="${pageContext.request.contextPath}/books/list";
 		}).fail(function(response){
 			alert("error");
 		});

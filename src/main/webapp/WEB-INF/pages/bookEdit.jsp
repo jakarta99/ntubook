@@ -34,7 +34,6 @@ $(function(){
 		}).done(function(response){
 			alert("success");
 			document.location.reload();
-			document.location.href="${pageContext.request.contextPath}/books/list";
 		}).fail(function(response){
 			alert("error");
 		});
@@ -48,7 +47,7 @@ $(function(){
 
 });
 
-jQuery.fn.serializeObject = function() { 
+jQuery.fn.serializeObject = function() {
   var arrayData, objectData;
   arrayData = this.serializeArray();
   objectData = {};

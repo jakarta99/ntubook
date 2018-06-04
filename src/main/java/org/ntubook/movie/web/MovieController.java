@@ -3,7 +3,6 @@ package org.ntubook.movie.web;
 import org.assertj.core.util.Lists;
 import org.ntubook.movie.dao.MovieDao;
 import org.ntubook.movie.entity.Movie;
-import org.ntubook.book.entity.Book;
 import org.ntubook.common.ajax.AjaxResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,9 +21,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Controller
 @RequestMapping("/movies")
-
 public class MovieController {
-	
+
 	@Autowired
 	private MovieDao movieDao;
 	
@@ -39,9 +37,12 @@ public class MovieController {
 		return "/movieAdd";
 	}
 	
-	public String edit() {
+	@RequestMapping("/edit/{id}")
+	public String editPage(@PathVariable("id") Long id, Model model) {
+		
+		model.addAttribute("model", movieDao.findById(id).get());
+		
 		return "/movieEdit";
-	
 	}
 	
 	@GetMapping
@@ -52,6 +53,18 @@ public class MovieController {
 		
 		ajaxResponse.setData(Lists.newArrayList(movieDao.findAll()));
 		ajaxResponse.setMessages(null);
+		
+		return ajaxResponse;
+	}
+	
+	
+	@DeleteMapping
+	@ResponseBody
+	public AjaxResponse del(@RequestBody Movie movie) {
+		
+		AjaxResponse ajaxResponse = new AjaxResponse();
+		
+		movieDao.deleteById(movie.getId());
 		
 		return ajaxResponse;
 	}
@@ -68,4 +81,25 @@ public class MovieController {
 		return ajaxResponse;
 	}
 	
+	
+	@PutMapping
+	@ResponseBody
+	public AjaxResponse update(@RequestBody Movie movie) {
+		
+		log.debug("{}", movie);
+		
+		AjaxResponse ajaxResponse = new AjaxResponse();
+		
+		Movie dbMovie = movieDao.findById(movie.getId()).get();
+		
+		dbMovie.setName(movie.getName());
+		dbMovie.setType(movie.getType());
+		dbMovie.setYear(movie.getYear());
+		
+		movieDao.save(dbMovie);
+		
+		return ajaxResponse;
+	}
+	
 }
+
