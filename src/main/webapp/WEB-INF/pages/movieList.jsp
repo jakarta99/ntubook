@@ -54,7 +54,7 @@
 		}
 		
 		function add() {
-			document.location.href='${pageContext.request.contextPath}/movie1/add';
+			document.location.href='${pageContext.request.contextPath}/movies/add';
 		}
 		
 		function edit(id) {
