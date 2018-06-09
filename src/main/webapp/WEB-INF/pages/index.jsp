@@ -87,28 +87,32 @@
             <h2 class="section-heading text-uppercase">Categories</h2>
           </div>
         </div>
+        
         <div class="row text-center">
           <div class="col-md-4">
             <span class="fa-stack fa-4x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-chalkboard-teacher fa-stack-1x fa-inverse"></i>
+              <i class="fa fa-circle fa-stack-2x text-primary"></i><a href='${pageContext.request.contextPath}/shelfs/list'>
+              <i class="fas fa-check-circle fa-stack-1x fa-inverse"></i><a href='${pageContext.request.contextPath}/shelfs/list'>
             </span>
-            <h4 class="service-heading">Required Courses</h4>
+            <h4 class="service-heading"><a href='${pageContext.request.contextPath}/shelfs/list' style="color:black">Required Courses</a></h4>
           </div>
+          
           <div class="col-md-4">
             <span class="fa-stack fa-4x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-check-circle fa-stack-1x fa-inverse"></i>
+              <i class="fa fa-circle fa-stack-2x text-primary"></i><a href='${pageContext.request.contextPath}/music/list'>
+              <i class="fas fa-check-circle fa-stack-1x fa-inverse"></i><a href='${pageContext.request.contextPath}/music/list'>
             </span>
-            <h4 class="service-heading">Elective Courses</h4>
+            <h4 class="service-heading"><a href='${pageContext.request.contextPath}/music/list' style="color:black">Elective Courses</a></h4>
           </div>
+          
           <div class="col-md-4">
             <span class="fa-stack fa-4x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-paper-plane fa-stack-1x fa-inverse"></i>
+              <i class="fa fa-circle fa-stack-2x text-primary"></i><a href='${pageContext.request.contextPath}/movies/list'>
+              <i class="fas fa-paper-plane fa-stack-1x fa-inverse"></i><a href='${pageContext.request.contextPath}/movies/list'>
             </span>
-            <h4 class="service-heading">General Courses</h4>
+            <h4 class="service-heading"><a href='${pageContext.request.contextPath}/movies/list' style="color:black">General Courses</a></h4>
           </div>
+          
         </div>
       </div>
     </section>
