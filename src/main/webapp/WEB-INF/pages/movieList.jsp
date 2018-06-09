@@ -6,27 +6,26 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-	
-  	</style>
 </head>
 <body>
 
-<h1 align="center">Movie List</h1>
-	<input type="button" id="addButton" name="addButton" value="Add..." onclick="add()" />
-		<table border='2'>
-			<thead>
-				<tr>
-					<th>Function</th>
-					<th>Name</th>
-					<th>Type</th>
-					<th>Year</th>
-				<tr>
-			</thead>
-			<tbody id="tableBody">
+	<h1 align="center">Movie List</h1>
+
+	<input type="button" id="addButton" name="addButton" value="Add..." onclick="add()"/>
+	<table border='1'>
+		<thead>
+			<tr>
+				<th>Function</th>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Year</th>
+			<tr>
+		</thead>
+		<tbody id="tableBody">
 			
-			</tbody>
+		</tbody>
 	
-		</table>
+	</table>
 		
 	<script>
 	$(function() {
@@ -42,22 +41,20 @@
 			dataType: 'json',
 				
 		}).always(function(response){ 
-				$("#tableBody").empty();
+			$("#tableBody").empty();
 				
-				$(response.data).each(function(i, o) {
-					$("#tableBody").append("<tr>")
-								
-								.append("<td><input type='button' value='Edit.' onclick='edit("+o.id+")'  > <input type='button' value='Del.' onclick='del("+o.id+")'  ></td>")
-								.append("<td align='center'>"+o.name+"</td>")
-								.append("<td align='center'>"+o.type"</td>")
-								.append("<td align='center'>"+o.year+"</td>")
-								
+			$(response.data).each(function(i, o) {
+				$("#tableBody").append("<tr>")
+							.append("<td><input type='button' value='Edit.' onclick='edit("+o.id+")'  > <input type='button' value='Del.' onclick='del("+o.id+")' ></td>")
+							.append("<td align='center'>"+o.name+"</td>")
+							.append("<td align='center'>"+o.type"</td>")
+							.append("<td align='center'>"+o.year+"</td>")			
 				});
 			});
 		}
 		
 		function add() {
-			document.location.href='${pageContext.request.contextPath}/movies/add';
+			document.location.href='${pageContext.request.contextPath}/movie1/add';
 		}
 		
 		function edit(id) {
@@ -79,8 +76,7 @@
 			});
 		}
 
-		
-		</script>
+	</script>
 		
 </body>
 </html>
