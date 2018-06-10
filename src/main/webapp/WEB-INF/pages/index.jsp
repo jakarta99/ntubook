@@ -133,7 +133,7 @@
                   <i class="fa fa-plus fa-3x"></i>
                 </div>
               </div>
-              <img height="450" width="350" src="img/portfolio/01-thumbnail.jpg" alt="">
+              <img height="450" width="350" src="img/portfolio/01-econ.jpg" alt="">
             </a>
             <div class="portfolio-caption" align="center"> <p>
               <h4>Book1</h4>
@@ -147,7 +147,7 @@
                   <i class="fa fa-plus fa-3x"></i>
                 </div>
               </div>
-              <img height="450" width="350" src="img/portfolio/02-thumbnail.jpg" alt="">
+              <img height="450" width="350" src="img/portfolio/02-calculus.jpg" alt="">
             </a>
             <div class="portfolio-caption" align="center"> <p> 
               <h4>Book2</h4>
@@ -161,7 +161,7 @@
                   <i class="fa fa-plus fa-3x"></i>
                 </div>
               </div>
-              <img height="450" width="350" src="img/portfolio/03-thumbnail.jpg" alt="">
+              <img height="450" width="350" src="img/portfolio/03-acct.jpg" alt="">
             </a>
             <div class="portfolio-caption" align="center"> <p>
               <h4>Book3</h4>
@@ -259,7 +259,7 @@
         <div class="row">
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="">
+              <img class="mx-auto rounded-circle" src="img/team/fang.jpg" alt="">
               <h4>FangChun</h4>            
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
@@ -268,7 +268,7 @@
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#">
+                  <a href="https://www.facebook.com/profile.php?id=100003071286181"  target="_blank">
                     <i class="fa fa-facebook"></i>
                   </a>
                 </li>
@@ -282,7 +282,7 @@
           </div>
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="">
+              <img class="mx-auto rounded-circle" src="img/team/chen.jpg" alt="">
               <h4>PengChen</h4>             
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
@@ -291,7 +291,7 @@
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#">
+                  <a href="https://www.facebook.com/profile.php?id=100013136956588"  target="_blank">
                     <i class="fa fa-facebook"></i>
                   </a>
                 </li>
@@ -305,7 +305,7 @@
           </div>
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
+              <img class="mx-auto rounded-circle" src="img/team/lun.jpg" alt="">
               <h4>ChungLun</h4>          
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
@@ -314,7 +314,7 @@
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#">
+                  <a href="https://www.facebook.com/alunahsieh" target="_blank">
                     <i class="fa fa-facebook"></i>
                   </a>
                 </li>
@@ -399,7 +399,7 @@
 			        <div class="row">
 			          <div class="col-lg-12">
 			          	<div class="col-md-6">
-                  		  <img height="450" width="350" align="left" src="img/portfolio/01-full.jpg" alt="">
+                  		  <img height="450" width="350" align="left" src="img/portfolio/01-econ.jpg" alt="">
                   		</div>
                   		<div class="col-md-10">
                   			<p style="font-size:15pt;">售價：</p>
@@ -442,7 +442,7 @@
 			        <div class="row">
 			          <div class="col-lg-12">
 			          	<div class="col-md-6">
-                  			<img height="450" width="350" align="left" src="img/portfolio/02-full.jpg" alt="">
+                  			<img height="450" width="350" align="left" src="img/portfolio/02-calculus.jpg" alt="">
                   		</div>
                   		<div class="col-md-10">
                   			<p style="font-size:15pt;">售價：</p>
@@ -485,7 +485,7 @@
 			        <div class="row">
 			          <div class="col-lg-12">
 			          	<div class="col-md-6">
-                  			<img height="450" width="350" align="left" src="img/portfolio/03-full.jpg" alt="">
+                  			<img height="450" width="350" align="left" src="img/portfolio/03-acct.jpg" alt="">
                         </div>
                         <div class="col-md-10">
                   			<p style="font-size:15pt;">售價：</p>
