@@ -27,56 +27,53 @@
   </head>
 
   <body id="page-top">
-	
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">NTU Books</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav text-uppercase ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#categories">Categories</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#bestsellers">Bestsellers</a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#sell">Sell</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#team">Team</a>
-            </li>
-            
-          </ul>
-        </div>
-      </div>
-    </nav>
+  	
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+		<div class="container">
+	        <a class="navbar-brand js-scroll-trigger" href="#page-top">NTU Books</a>
+	        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu
+	        	<i class="fa fa-bars"></i>
+	        </button>
+	        <div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav text-uppercase ml-auto">
+	        		<li class="nav-item">
+	              		<a class="nav-link js-scroll-trigger" href="#categories">Categories</a>
+	            	</li>
+		            <li class="nav-item">
+		            	<a class="nav-link js-scroll-trigger" href="#bestsellers">Bestsellers</a>
+		            </li>	            
+		            <li class="nav-item">
+		            	<a class="nav-link js-scroll-trigger" href="#sell">Sell</a>
+		            </li>
+		            <li class="nav-item">
+		            	<a class="nav-link js-scroll-trigger" href="#team">Team</a>
+		            </li>	           
+				</ul>
+	    	</div>
+		</div>
+	</nav>
 
     <!-- Header -->
     <header class="masthead">
-      <div class="container">
+    <div class="container">
         <div class="intro-text">
-          <div class="intro-lead-in">
-          	<big><big>Find The Book You Want!</big></big>
-       	  </div>
-  	    <form>
-          <div class="form-row">
-       	  	<div class="col-12 col-md-9">
-          		<input type="search" style="height:65px;font-size:20pt;" class="form-control form-control-lg"  placeholder="Enter the book...">
-          		<p style="height:100px;"></p>
-          	</div>
-         	<div class="col-12 col-md-3">
-          		<button type="submit" class="btn btn-block btn-lg btn-primary" style="width:200px;height:65px;font-size:25pt;">Search</button>
-         	</div>
-          </div>
-        </form>
+        	<div class="intro-lead-in">
+          		<big><big>Find The Book You Want!</big></big>
+       		</div>
+  	    	<form>
+        		<div class="form-row">
+       	  			<div class="col-12 col-md-9">
+          				<input type="search" style="height:65px;font-size:20pt;" class="form-control form-control-lg"  placeholder="Enter the book...">
+          				<p style="height:100px;"></p>
+          			</div>
+         			<div class="col-12 col-md-3">
+          				<button type="submit" class="btn btn-block btn-lg btn-primary" style="width:200px;height:65px;font-size:25pt;">Search</button>
+         			</div>
+          		</div>
+        	</form>
         </div>
-      </div>
+    </div>
     </header>
 
     <!-- Services -->
@@ -117,59 +114,61 @@
       </div>
     </section>
 
-   <!-- Portfolio Grid -->
-    <section class="bg-light" id="bestsellers">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Bestsellers</h2>            
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img height="450" width="350" src="img/portfolio/01-econ.jpg" alt="">
-            </a>
-            <div class="portfolio-caption" align="center"> <p>
-              <h4>Book1</h4>
-              <p class="text-muted">Price1</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img height="450" width="350" src="img/portfolio/02-calculus.jpg" alt="">
-            </a>
-            <div class="portfolio-caption" align="center"> <p> 
-              <h4>Book2</h4>
-              <p class="text-muted">Price2</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img height="450" width="350" src="img/portfolio/03-acct.jpg" alt="">
-            </a>
-            <div class="portfolio-caption" align="center"> <p>
-              <h4>Book3</h4>
-              <p class="text-muted">Price3</p>
-            </div>
-          </div>          
-        </div>
-      </div>
+	<!-- Portfolio Grid -->
+	<section class="bg-light" id="bestsellers">
+    	<div class="container">
+        	<div class="row">
+         		<div class="col-lg-12 text-center">
+            		<h2 class="section-heading text-uppercase">Bestsellers</h2>            
+         		</div>
+        	</div>
+        	<div class="row">
+         		<div class="col-md-4 col-sm-6 portfolio-item">
+          			<a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+             			<div class="portfolio-hover">
+                			<div class="portfolio-hover-content">
+                  				<i class="fa fa-plus fa-3x"></i>
+                			</div>
+              			</div>
+              			<img height="450" width="350" src="img/portfolio/01-econ.jpg" alt="">
+            		</a>
+            		<div class="portfolio-caption" align="center"> <p>
+              			<h4>經濟學原理</h4>
+              			<p class="text-muted" style="font-size:20pt">750</p>
+            		</div>
+          		</div>
+          		
+				<div class="col-md-4 col-sm-6 portfolio-item">
+            		<a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+              			<div class="portfolio-hover">
+			                <div class="portfolio-hover-content">
+			                	<i class="fa fa-plus fa-3x"></i>
+			                </div>
+              			</div>
+              			<img height="450" width="350" src="img/portfolio/02-calculus.jpg" alt="">
+            		</a>
+            		<div class="portfolio-caption" align="center"> <p> 
+              			<h4>Calculus of a Single Variable</h4>
+              			<p class="text-muted" style="font-size:20pt">1200</p>
+            		</div>
+          		</div>
+          		
+				<div class="col-md-4 col-sm-6 portfolio-item">
+            		<a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+              			<div class="portfolio-hover">
+			                <div class="portfolio-hover-content">
+			                	<i class="fa fa-plus fa-3x"></i>
+			                </div>
+              			</div>
+              			<img height="450" width="350" src="img/portfolio/03-acct.jpg" alt="">
+           			</a>
+            		<div class="portfolio-caption" align="center"> <p>
+		                <h4>Accounting Principles</h4>
+		                <p class="text-muted" style="font-size:20pt">950</p>
+            		</div>
+          		</div>          
+        	</div>
+    	</div>
     </section>
     
     
@@ -177,73 +176,86 @@
 
 	<!-- Sell -->
     <section id="sell">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Sell your book</h2>            
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <form id="contactForm" name="sentMessage" novalidate="novalidate">
-              <div class="row">
-                <div class="col-md-6">
-		          <div class="form-group">
-		            <input class="form-control" id="name" type="text" placeholder="書名" required="required" data-validation-required-message="請輸入書名">
-		            <p class="help-block text-danger"></p>
-		          </div>
-		          <div class="form-group">
-		            <input class="form-control" id="price" type="text" placeholder="售價" required="required" data-validation-required-message="請輸入售價">
-		            <p class="help-block text-danger"></p>
-		          </div>
-		          <div class="form-group">
-		            <input class="form-control" id="courseName" type="text" placeholder="課程名稱" required="required" data-validation-required-message="請輸入課程名稱">
-		            <p class="help-block text-danger"></p>
-		          </div>               
-		          <div class="form-group">
-		            <input class="form-control" id="courseName" type="text" placeholder="教授名稱" required="required" data-validation-required-message="請輸入教授名稱">
-		            <p class="help-block text-danger"></p>
-		          </div>
-		           <select style="height:35px; width:100px">
-					 <option value="開課系所 ">開課系所</option>
-					 <option value="國企系">國企系</option>
-					 <option value="經濟系">經濟系</option>
-				   </select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				   <select style="height:35px; width:100px">
-					 <option value="有無筆記 ">有無筆記</option>
-					 <option value="有">有</option>
-					 <option value="無">無</option>
-				   </select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				   <select style="height:35px; width:100px">
-				 	 <option value="書幾成新 ">書幾成新</option>
-					 <option value="全新">全新</option>
-					 <option value="九成">九成</option>
-					 <option value="七成">七成</option>
-					 <option value="五成">五成</option>
-					 <option value="三成">三成</option>
-				   </select> <p> </p>
-				   <div class="form-group">
-		            <textarea class="form-control" style="height:150px;" id="courseName" placeholder="想說的話" required="required" data-validation-required-message="想說的話"></textarea>
-		            <p class="help-block text-danger"></p>
-		          </div>
-				 </div>
-				 <div class="col-md-6">
-                  <div class="form-group">
-                    <textarea class="form-control" style="height:417px;" id="message" placeholder="上傳照片" required="required" data-validation-required-message="上傳照片"></textarea>
-                    <p class="help-block text-danger"></p>
-                  </div>
-                </div>
-			     <div class="clearfix"></div>
-			     <div class="col-lg-12 text-center">
-			       <div id="success"></div>
-			       <button id="sendMessageButton" class="btn btn-primary btn-lg" style="height:55px;font-size:25pt;" type="submit">Send</button>
-			     </div>
-			   </div>
-			 </form>
-		   </div>
-		 </div>
-	   </div>
-	 </section>
+    	<div class="container">
+        	<div class="row">
+          		<div class="col-lg-12 text-center">
+            		<h2 class="section-heading text-uppercase">Sell your book</h2>            
+          		</div>
+        	</div>
+        	<div class="row">
+          		<div class="col-lg-12">
+            		<form id="contactForm" name="sentMessage" novalidate="novalidate">
+              			<div class="row">
+                			<div class="col-md-6">
+		          				<div class="form-group">
+		            				<input class="form-control" id="name" type="text" placeholder="書名" required="required" data-validation-required-message="請輸入書名">
+		            				<p class="help-block text-danger"></p>
+		          				</div>
+		          				
+		          				<div class="form-group">
+						            <input class="form-control" id="price" type="text" placeholder="售價" required="required" data-validation-required-message="請輸入售價">
+						            <p class="help-block text-danger"></p>
+		          				</div>
+		          				
+								<div class="form-group">
+									<input class="form-control" id="courseName" type="text" placeholder="課程名稱" required="required" data-validation-required-message="請輸入課程名稱">
+		          					<p class="help-block text-danger"></p>
+		          				
+		          				</div>               
+					          	
+					          	<div class="form-group">
+					            	<input class="form-control" id="courseName" type="text" placeholder="教授名稱" required="required" data-validation-required-message="請輸入教授名稱">
+					            	<p class="help-block text-danger"></p>
+					         	</div>
+		           
+						        <select style="height:35px; width:100px">
+									<option value="開課系所 ">開課系所</option>
+									<option value="國企系">國企系</option>
+									<option value="經濟系">經濟系</option>
+								</select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				 
+								<select style="height:35px; width:100px">
+									<option value="有無筆記 ">有無筆記</option>
+									<option value="有">有</option>
+									<option value="無">無</option>
+								</select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				 
+								<select style="height:35px; width:100px">
+								 	<option value="書幾成新 ">書幾成新</option>
+									<option value="全新">全新</option>
+									<option value="九成">九成</option>
+									<option value="七成">七成</option>
+									<option value="五成">五成</option>
+									<option value="三成">三成</option>
+								</select> <p> </p>
+				   
+								<div class="form-group">
+						           <textarea class="form-control" style="height:150px;" id="courseName" placeholder="想說的話"></textarea>
+						           <p class="help-block text-danger"></p>
+						        </div>
+							</div>
+				
+				 			<div class="col-md-6">
+				 				<form>
+				   					<div class="form-group">
+				     					<label for="exampleFormControlFile1"><big>上傳此書照片</big></label>
+				     					<input type="file" class="form-control-file" id="exampleFormControlFile1">
+				   					</div>
+				 				</form>
+				 			</div>				
+		             
+			     			<div class="clearfix"></div>
+		    				<div class="col-lg-12 text-center">
+		       					<div id="success"></div>
+	       						<button id="sendMessageButton" class="btn btn-primary btn-lg" style="height:55px;font-size:25pt;" type="submit">Send</button>
+	     					</div>
+			     
+   						</div>
+		 			</form>
+		   		</div>
+			</div>
+	   	</div>
+	</section>
 			   
 
    
