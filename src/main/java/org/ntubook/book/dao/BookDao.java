@@ -15,4 +15,8 @@ public interface BookDao extends CrudRepository<Book,Long> {
 	public List<Book> findByPriceOrderByNameDesc(Integer priceOrderByNameDesc);
 	public List<Book> findByNameOrderByPriceDesc(String nameOrderByPriceDesc);
 	public List<Book> findByNameAndProfessor(String name, String professor);
+	
+	public List<Book> findTop3ByOrderByViewCountDesc();
+	
+	
 } 
