@@ -510,7 +510,19 @@
 			}).always(function(response){ 
 									
 				$(response.data).each(function(i, o) {
-					$("#hotList").append("<div class='col-md-4 col-sm-6 portfolio-item'><img height='450' width='350' src='img/portfolio/02-calculus.jpg'><div class='portfolio-caption' align='center'><h4>"+o.name+"</h4><p class='text-muted' style='font-size:20pt'>"+o.price+"</p></div></div>");
+					
+					var htmlContent = "<div class='col-md-4 col-sm-6 portfolio-item'>"
+										+"<a href='${pageContext.request.contextPath}/bookDetail?id="+o.id+"' border='0'>"
+										+"<img height='450' width='350' src='img/portfolio/02-calculus.jpg'>"
+										+"</a>"
+										+"<div class='portfolio-caption' align='center'>"
+											+"<h4>"+o.name+"</h4>"
+											+"<p class='text-muted' style='font-size:20pt'>"+o.price+"</p>"
+										+"</div>"
+									  +"</div>";
+					
+					
+					$("#hotList").append(htmlContent);
 								
 				});
 			});
