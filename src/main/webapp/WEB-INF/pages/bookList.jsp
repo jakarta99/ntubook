@@ -57,16 +57,16 @@
 	}
 	
 	function edit(id) {
-		document.location.href='${pageContext.request.contextPath}/books/edit/'+id;  //根目錄:/books/edit
+		document.location.href='${pageContext.request.contextPath}/books/edit/'+id;  //æ ¹ç®é:/books/edit
 	}
 	
 	function del(id) {
 		$.ajax({ 
 			url: '${pageContext.request.contextPath}/books',
 			type: 'DELETE',
-			contentType: 'application/json; charset=utf-8',    //content type的一種
+			contentType: 'application/json; charset=utf-8',    //content typeçä¸ç¨®
 			dataType: 'json',
-			data: JSON.stringify({'id':id}),    //-->轉成字串
+			data: JSON.stringify({'id':id}),    //-->è½æå­ä¸²
 		}).done(function(response){
 			alert('success');
 			loadData();
