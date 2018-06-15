@@ -142,4 +142,15 @@ public class BookDaoTest {
 		*/
 	}
 
+	@Test
+	public void testFindTop3OrderByViewCount() {
+		
+		List<Book> results = bookDao.findTop3ByOrderByViewCountDesc();
+		
+		for(Book book:results) {
+			System.out.println(book);
+		}
+		
+		
+	}
 }

@@ -23,6 +23,15 @@ public class Book {
 	private Integer price;
 	@Column(name = "PROFESSOR")
 	private String professor;
+	
+	
+	@Column(name = "VIEW_COUNT")
+	private Integer viewCount;
+	
+	@Column(name = "SELLER_ID")
+	private Long sellerId;
+	
+	
 
 	/*
 	@Override

@@ -57,6 +57,22 @@ public class BookController {
 		return ajaxResponse;
 	}
 	
+	@GetMapping("/hot3")
+	@ResponseBody
+	public AjaxResponse queryHot3() {
+		
+		AjaxResponse ajaxResponse = new AjaxResponse();
+		
+		ajaxResponse.setData(Lists.newArrayList(bookDao.findTop3ByOrderByViewCountDesc()));
+		ajaxResponse.setMessages(null);
+		
+		return ajaxResponse;
+		
+	}
+	
+	
+	
+	
 	
 	@DeleteMapping
 	@ResponseBody

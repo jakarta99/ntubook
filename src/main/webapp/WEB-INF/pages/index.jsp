@@ -122,52 +122,12 @@
             		<h2 class="section-heading text-uppercase">Bestsellers</h2>            
          		</div>
         	</div>
-        	<div class="row">
-         		<div class="col-md-4 col-sm-6 portfolio-item">
-          			<a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-             			<div class="portfolio-hover">
-                			<div class="portfolio-hover-content">
-                  				<i class="fa fa-plus fa-3x"></i>
-                			</div>
-              			</div>
-              			<img height="450" width="350" src="img/portfolio/01-econ.jpg" alt="">
-            		</a>
-            		<div class="portfolio-caption" align="center"> <p>
-              			<h4>經濟學原理</h4>
-              			<p class="text-muted" style="font-size:20pt">750</p>
-            		</div>
-          		</div>
-          		
-				<div class="col-md-4 col-sm-6 portfolio-item">
-            		<a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-              			<div class="portfolio-hover">
-			                <div class="portfolio-hover-content">
-			                	<i class="fa fa-plus fa-3x"></i>
-			                </div>
-              			</div>
-              			<img height="450" width="350" src="img/portfolio/02-calculus.jpg" alt="">
-            		</a>
-            		<div class="portfolio-caption" align="center"> <p> 
-              			<h4>Calculus of a Single Variable</h4>
-              			<p class="text-muted" style="font-size:20pt">1200</p>
-            		</div>
-          		</div>
-          		
-				<div class="col-md-4 col-sm-6 portfolio-item">
-            		<a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-              			<div class="portfolio-hover">
-			                <div class="portfolio-hover-content">
-			                	<i class="fa fa-plus fa-3x"></i>
-			                </div>
-              			</div>
-              			<img height="450" width="350" src="img/portfolio/03-acct.jpg" alt="">
-           			</a>
-            		<div class="portfolio-caption" align="center"> <p>
-		                <h4>Accounting Principles</h4>
-		                <p class="text-muted" style="font-size:20pt">950</p>
-            		</div>
-          		</div>          
+        	<div class="row" id="hotList">
+         		     
         	</div>
+        	
+        	
+        	
     	</div>
     </section>
     
@@ -534,6 +494,41 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/agency.min.js"></script>
+
+	<script>
+		$(function() {
+			loadHot3();
+			
+		});
+		
+		function loadHot3() {
+			$.ajax({
+				url: '${pageContext.request.contextPath}/books/hot3',
+				type: 'GET',
+				dataType: 'json',  
+				
+			}).always(function(response){ 
+									
+				$(response.data).each(function(i, o) {
+					
+					var htmlContent = "<div class='col-md-4 col-sm-6 portfolio-item'>"
+										+"<a href='${pageContext.request.contextPath}/bookDetail?id="+o.id+"' border='0'>"
+										+"<img height='450' width='350' src='img/portfolio/02-calculus.jpg'>"
+										+"</a>"
+										+"<div class='portfolio-caption' align='center'>"
+											+"<h4>"+o.name+"</h4>"
+											+"<p class='text-muted' style='font-size:20pt'>"+o.price+"</p>"
+										+"</div>"
+									  +"</div>";
+					
+					
+					$("#hotList").append(htmlContent);
+								
+				});
+			});
+		};
+   	</script>
+
 
   </body>
 
