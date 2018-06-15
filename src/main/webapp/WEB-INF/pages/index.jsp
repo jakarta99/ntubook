@@ -104,10 +104,10 @@
           
           <div class="col-md-4">
             <span class="fa-stack fa-4x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i><a href='${pageContext.request.contextPath}/movies/list' target="_blank">
-              <i class="fas fa-paper-plane fa-stack-1x fa-inverse"></i><a href='${pageContext.request.contextPath}/movies/list' target="_blank">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i><a href='${pageContext.request.contextPath}/shelves/list' target="_blank">
+              <i class="fas fa-paper-plane fa-stack-1x fa-inverse"></i><a href='${pageContext.request.contextPath}/shelves/list' target="_blank">
             </span>
-            <h4 class="service-heading"><a href='${pageContext.request.contextPath}/movies/list' target="_blank" style="color:black">General Courses</a></h4>
+            <h4 class="service-heading"><a href='${pageContext.request.contextPath}/shelves/list' target="_blank" style="color:black">General Courses</a></h4>
           </div>
           
         </div>
