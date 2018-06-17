@@ -1,5 +1,7 @@
 package org.ntubook.book.web;
 
+import java.util.Arrays;
+
 import org.assertj.core.util.Lists;
 import org.ntubook.book.dao.BookDao;
 import org.ntubook.book.entity.Book;
@@ -23,6 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/books")
 public class BookController {
 
+	private static final String String = null;
 	@Autowired
 	private BookDao bookDao;
 	
@@ -70,7 +73,19 @@ public class BookController {
 		
 	}
 	
-	
+	@GetMapping("/findByName")
+	@ResponseBody
+	public AjaxResponse queryFindByName() {
+		
+		AjaxResponse ajaxResponse = new AjaxResponse();
+		
+		ajaxResponse.setData(Lists.newArrayList(bookDao.findByCollegeIn(Arrays.asList("Management", "Social Science", "Liberal Arts","Law"))));
+		ajaxResponse.setMessages(null);
+		
+		
+		return ajaxResponse;
+		
+	}
 	
 	
 	

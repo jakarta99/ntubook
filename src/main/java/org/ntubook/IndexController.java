@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class IndexController {
 	
+	private static final int Integer = 0;
 	@Autowired
 	private BookDao bookDao;
 
@@ -34,6 +35,17 @@ public class IndexController {
 		model.addAttribute("entity", thisBook);
 		
 		return "/bookDetail";
+	}
+	
+	@RequestMapping("/search")
+	public String search(@RequestParam("allsearch") String allsearch, Model model) {
+		
+		Book thisBook = bookDao.findByNameLike(allsearch).get(Integer);
+		System.out.println(thisBook);
+		
+		model.addAttribute("result", thisBook);
+		
+		return "/search";
 	}
 	
 	@RequestMapping("/bookOrder")

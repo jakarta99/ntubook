@@ -61,20 +61,39 @@
         	<div class="intro-lead-in">
           		<big><big>Find The Book You Want!</big></big>
        		</div>
-  	    	<form>
+  	    	<form id="formsearch" action="/search" enctype="multipart/form-data" method="get">
         		<div class="form-row">
        	  			<div class="col-12 col-md-9">
-          				<input type="search" style="height:65px;font-size:20pt;" class="form-control form-control-lg"  placeholder="Enter the book...">
+          				<input name="allsearch" type="text" style="height:65px;font-size:20pt;" class="form-control form-control-lg" id="txtallsearch" placeholder="請輸入書名..." size="24" />
           				<p style="height:100px;"></p>
           			</div>
          			<div class="col-12 col-md-3">
-          				<button type="submit" class="btn btn-block btn-lg btn-primary" style="width:200px;height:65px;font-size:25pt;">Search</button>
+          				<a href="javascript:$('#formsearch').submit();">
+          				<button type="button" class="btn btn-block btn-lg btn-primary" style="width:200px;height:65px;font-size:25pt;">Search</button>
+          				</a>
          			</div>
           		</div>
         	</form>
+        	        	
         </div>
     </div>
     </header>
+    
+    <button type="button" class="btn btn-primary" onclick="loadFindByName()">test</button>
+    <!-- Portfolio Grid -->
+	<section class="bg-light" id="bestseller">
+    	<div class="container">
+        	<div class="row">
+         		<div class="col-lg-12 text-center">
+            		<h2 class="section-heading text-uppercase">test</h2>            
+         		</div>
+        	</div>
+        	<div class="row" id="findByName">
+         		     
+        	</div>        	
+        	
+    	</div>
+    </section>
 
     <!-- Services -->
     <section id="categories">
@@ -124,14 +143,10 @@
         	</div>
         	<div class="row" id="hotList">
          		     
-        	</div>
-        	
-        	
+        	</div>        	
         	
     	</div>
-    </section>
-    
-    
+    </section>       
     
 
 	<!-- Sell -->
@@ -529,7 +544,51 @@
 		};
    	</script>
 
-
+	<script>
+   	    /*
+		$(function() {
+			loadFindByName();
+			
+		});
+		*/
+		function loadFindByName() {
+			/*
+			var x = document.getElementById("searchForm");
+		    var text = "";	
+		    var i;
+		    for (i = 0; i < x.length ;i++) {
+		        text += x.elements[i].value + "<br>";
+		    }
+		    		    
+		    document.getElementById("demo").innerHTML = text;		
+			*/
+			
+			$.ajax({
+				url: '${pageContext.request.contextPath}/books/findByName',
+				type: 'GET',
+				dataType: 'json',  
+				
+			}).always(function(response){ 
+									
+				$(response.data).each(function(i, o) {
+					
+					var htmlContent = "<div class='col-md-4 col-sm-6 portfolio-item'>"
+										+"<a href='${pageContext.request.contextPath}/bookDetail?id="+o.id+"' border='0'>"
+										+"<img height='450' width='350' src='img/portfolio/03-acct.jpg'>"
+										+"</a>"
+										+"<div class='portfolio-caption' align='center'>"
+											+"<h4>"+o.name+"</h4>"
+											+"<p class='text-muted' style='font-size:20pt'>"+o.price+"</p>"
+										+"</div>"
+									  +"</div>";
+					
+					
+					$("#findByName").append(htmlContent);
+								
+				});
+			});
+		};
+	</script>
   </body>
 
 </html>
