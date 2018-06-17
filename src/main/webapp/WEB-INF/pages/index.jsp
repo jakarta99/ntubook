@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Agency - Start Bootstrap Theme</title>
+    <title>NTUbooks</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -108,7 +108,7 @@
           <div class="col-md-4">
             <span class="fa-stack fa-4x">
               <i class="fa fa-circle fa-stack-2x text-primary"></i><a href='${pageContext.request.contextPath}/books/list' target="_blank">
-              <i class="fas fa-check-circle fa-stack-1x fa-inverse"></i><a href='${pageContext.request.contextPath}/books/list' target="_blank">
+              <i class="fa fa-book fa-stack-1x fa-inverse"></i><a href='${pageContext.request.contextPath}/books/list' target="_blank">
             </span>
             <h4 class="service-heading"><a href='${pageContext.request.contextPath}/books/list' target="_blank" style="color:black">Required Courses</a></h4>
           </div>
@@ -116,7 +116,7 @@
           <div class="col-md-4">
             <span class="fa-stack fa-4x">
               <i class="fa fa-circle fa-stack-2x text-primary"></i><a href='${pageContext.request.contextPath}/music/list' target="_blank">
-              <i class="fas fa-check-circle fa-stack-1x fa-inverse"></i><a href='${pageContext.request.contextPath}/music/list' target="_blank">
+              <i class="fa fa-check-circle fa-stack-1x fa-inverse"></i><a href='${pageContext.request.contextPath}/music/list' target="_blank">
             </span>
             <h4 class="service-heading"><a href='${pageContext.request.contextPath}/music/list' target="_blank" style="color:black">Elective Courses</a></h4>
           </div>
@@ -124,7 +124,7 @@
           <div class="col-md-4">
             <span class="fa-stack fa-4x">
               <i class="fa fa-circle fa-stack-2x text-primary"></i><a href='${pageContext.request.contextPath}/shelves/list' target="_blank">
-              <i class="fas fa-paper-plane fa-stack-1x fa-inverse"></i><a href='${pageContext.request.contextPath}/shelves/list' target="_blank">
+              <i class="fa fa-paper-plane fa-stack-1x fa-inverse"></i><a href='${pageContext.request.contextPath}/shelves/list' target="_blank">
             </span>
             <h4 class="service-heading"><a href='${pageContext.request.contextPath}/shelves/list' target="_blank" style="color:black">General Courses</a></h4>
           </div>
