@@ -12,7 +12,4 @@ ${entity.howNew} <br/>
 ${entity.messages} <br/>
 ${entity.sellerId} <br/>
 
-
-
-
 <a href='/'>Index</a>

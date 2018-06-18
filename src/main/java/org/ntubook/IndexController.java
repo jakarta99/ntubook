@@ -36,17 +36,5 @@ public class IndexController {
 		return "/bookDetail";
 	}
 	
-	@RequestMapping("/bookOrder")
-	public String bookOrder(@RequestParam("id") Long bookId, Model model) {
-		
-		Book thisBook = bookDao.findById(bookId).get();
-		System.out.println(thisBook);
-		
-		thisBook.setSellerId(thisBook.getSellerId());
-		bookDao.save(thisBook);
-		
-		model.addAttribute("entity", thisBook);
-		
-		return "/bookOrder";
-	}
+	
 }
