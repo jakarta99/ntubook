@@ -1,6 +1,9 @@
 package org.ntubook;
 
 
+import java.util.List;
+
+import org.assertj.core.util.Lists;
 import org.ntubook.book.dao.BookDao;
 import org.ntubook.book.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,16 +40,22 @@ public class IndexController {
 		return "/bookDetail";
 	}
 	
-	@RequestMapping("/search")
-	public String search(@RequestParam("allsearch") String allsearch, Model model) {
+	//@RequestMapping("/search")
+	//public String search(@RequestParam("allsearch") String allsearch, Model model) {
 		
-		Book thisBook = bookDao.findByNameLike(allsearch).get(Integer);
-		System.out.println(thisBook);
+		//List<Book> books = Lists.newArrayList(bookDao.findByNameLike(allsearch).get(Integer)); 
+		//for (Book book:books) {
+		//	System.out.println(book);
+		//}
 		
-		model.addAttribute("result", thisBook);
+		//Book thisBook = bookDao.findByNameLike(allsearch).get(Integer);
+		//System.out.println(thisBook);
 		
-		return "/search";
-	}
+		//model.addAttribute("result", thisBook);
+		
+		//return "/search";
+		
+	//}
 	
 	@RequestMapping("/bookOrder")
 	public String bookOrder(@RequestParam("id") Long bookId, Model model) {

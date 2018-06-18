@@ -110,6 +110,10 @@
 			      <td>${result.howNew}</td>
 			    </tr>
 			    <tr>
+			      <th scope="row" class="table-secondary">備註</th>
+			      <td>${entity.messages}</td>
+			    </tr>
+			    <tr>
 			      <th scope="row" class="table-secondary">關注人數</th>
 			      <td>${result.viewCount}</td>
 			    </tr>
