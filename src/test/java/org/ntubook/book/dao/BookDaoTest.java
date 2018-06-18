@@ -55,7 +55,7 @@ public class BookDaoTest {
 		
 		//findOne
 		System.out.println("------------------**findByNameLike**------------------");
-		books = bookDao.findByNameLike("C%");
+		books = bookDao.findByNameLike("a%");
 		for (Book book:books) {
 			System.out.println(book);
 		}

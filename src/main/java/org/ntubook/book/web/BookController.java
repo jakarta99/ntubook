@@ -1,5 +1,8 @@
 package org.ntubook.book.web;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.assertj.core.util.Lists;
 import org.ntubook.book.dao.BookDao;
 import org.ntubook.book.entity.Book;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.extern.slf4j.Slf4j;
@@ -23,9 +27,22 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/books")
 public class BookController {
 
+	private static final String String = null;
 	@Autowired
 	private BookDao bookDao;
 	
+	
+	@GetMapping
+	@ResponseBody
+	public AjaxResponse query() {
+		
+		AjaxResponse ajaxResponse = new AjaxResponse();
+		
+		ajaxResponse.setData(Lists.newArrayList(bookDao.findAll()));
+		ajaxResponse.setMessages(null);
+		
+		return ajaxResponse;
+	}
 	
 	@RequestMapping("/list")
 	public String listPage() {
@@ -45,16 +62,17 @@ public class BookController {
 		return "/bookEdit";
 	}
 	
-	@GetMapping
+	@RequestMapping("/search")
 	@ResponseBody
-	public AjaxResponse query() {
+	public AjaxResponse querySearch(@RequestParam("allsearch") String allsearch) {
 		
 		AjaxResponse ajaxResponse = new AjaxResponse();
 		
-		ajaxResponse.setData(Lists.newArrayList(bookDao.findAll()));
+		ajaxResponse.setData(Lists.newArrayList(bookDao.findByNameLike(allsearch)));
 		ajaxResponse.setMessages(null);
 		
 		return ajaxResponse;
+		
 	}
 	
 	@GetMapping("/hot3")
@@ -71,6 +89,47 @@ public class BookController {
 	}
 	
 	
+	@GetMapping("/findByCollege1")
+	@ResponseBody
+	public AjaxResponse queryFindByCollege1() {
+		
+		AjaxResponse ajaxResponse = new AjaxResponse();
+		
+		ajaxResponse.setData(Lists.newArrayList(bookDao.findByCollegeIn(Arrays.asList("管理學院", "社會科學院", "文學院","法學院"))));
+		ajaxResponse.setMessages(null);
+		
+		
+		return ajaxResponse;
+		
+	}
+	
+	@GetMapping("/findByCollege2")
+	@ResponseBody
+	public AjaxResponse queryFindByCollege2() {
+		
+		AjaxResponse ajaxResponse = new AjaxResponse();
+		
+		ajaxResponse.setData(Lists.newArrayList(bookDao.findByCollegeIn(Arrays.asList("理學院", "工學院", "電機資訊學院", "生物資源暨農學院"))));
+		ajaxResponse.setMessages(null);
+		
+		
+		return ajaxResponse;
+		
+	}
+	
+	@GetMapping("/findByCollege3")
+	@ResponseBody
+	public AjaxResponse queryFindByCollege3() {
+		
+		AjaxResponse ajaxResponse = new AjaxResponse();
+		
+		ajaxResponse.setData(Lists.newArrayList(bookDao.findByCollegeIn(Arrays.asList("公共衛生學院", "生命科學院", "醫學院","其他"))));
+		ajaxResponse.setMessages(null);
+		
+		
+		return ajaxResponse;
+		
+	}
 	
 	
 	

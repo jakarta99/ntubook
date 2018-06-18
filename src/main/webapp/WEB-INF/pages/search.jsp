@@ -1,4 +1,6 @@
-<h1>Book Order</h1>
+<div class="alert alert-info" role="alert">
+  We found the book!!!
+</div>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -50,8 +52,23 @@
     <!-- Custom scripts for this template -->
     <script src="js/agency.min.js"></script>
   	
-  
-			
+  	
+  	<!--
+		${entity.id} <br/>
+		${entity.name} <br/>
+		${entity.price} <br/>
+		${entity.viewCount} <br/>
+		${entity.courseName} <br/>
+		${entity.professor} <br/>
+		${entity.college} <br/>
+		${entity.discount} <br/>
+		${entity.notesOn} <br/>
+		${entity.howNew} <br/>
+		${entity.messages} <br/>
+		${entity.sellerId} <br/>
+	-->
+		
+		
 			<table class="table table-bordered" >
 			  <thead>
 			    <tr>
@@ -64,21 +81,21 @@
 			  <tbody>
 			  	<tr>
 			      <th scope="row" class="table-secondary">書名</th>
-			      <td>${entity.name}</td>
+			      <td>${result.name}</td>
 			      <td rowspan="8"><img height="450" width="350" align="left" src="img/portfolio/03-acct.jpg" alt=""></td>
 			    </tr>
 			    <tr>
 			      <th scope="row" class="table-secondary">售價</th>
-			      <td>${entity.price}</td>
+			      <td>${result.price}</td>
 			      
 			    </tr>
 			    <tr>
 			      <th scope="row" class="table-secondary">課程名稱</th>
-			      <td>${entity.courseName}</td>
+			      <td>${result.courseName}</td>
 			    </tr>
 			    <tr>
 			      <th scope="row" class="table-secondary">教授名稱</th>
-			      <td>${entity.professor}</td>
+			      <td>${result.professor}</td>
 			    </tr>
 			    <tr>
 			      <th scope="row" class="table-secondary">開課系所</th>
@@ -86,22 +103,26 @@
 			    </tr>
 			     <tr>
 			      <th scope="row" class="table-secondary">有無筆記</th>
-			      <td>${entity.notesOn}</td>
+			      <td>${result.notesOn}</td>
 			    </tr>
 			     <tr>
 			      <th scope="row" class="table-secondary">書況（幾成新）</th>
-			      <td>${entity.howNew}</td>
+			      <td>${result.howNew}</td>
+			    </tr>
+			    <tr>
+			      <th scope="row" class="table-secondary">備註</th>
+			      <td>${entity.messages}</td>
 			    </tr>
 			    <tr>
 			      <th scope="row" class="table-secondary">關注人數</th>
-			      <td>${entity.viewCount}</td>
+			      <td>${result.viewCount}</td>
 			    </tr>
 			    
 			  </tbody>
 			</table>
 			
 			<div class="text-center">
-				<button type="button" class="btn btn-danger  btn-lg">我有訂購！</button>
+				<button type="button" class="btn btn-danger  btn-lg">我有興趣！</button>
 			</div>
 		
   </body>
@@ -111,16 +132,10 @@
 
 
 
-
-
-
-<!--
-${entity.id} <br/>
-${entity.name} <br/>
-${entity.price} <br/>
-${entity.sellerId} <br/>
-${entity.buyerId} <br/>
-${entity.currentStatus} <br/>
+<!--${result.id} <br/>
+${result.name} <br/>
+${result.price} <br/>
+${result.viewCount} <br/>
 
 <a href='/'>Index</a>
 -->
