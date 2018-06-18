@@ -124,9 +124,3 @@
   </body>
 
 </html>
-
-<<<<<<< HEAD
-<a href='/'>Index</a>
-=======
-
->>>>>>> branch 'master' of https://github.com/jakarta99/ntubook.git

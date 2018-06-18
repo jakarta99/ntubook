@@ -40,9 +40,6 @@ public class IndexController {
 		return "/bookDetail";
 	}
 	
-<<<<<<< HEAD
-	
-=======
 	//@RequestMapping("/search")
 	//public String search(@RequestParam("allsearch") String allsearch, Model model) {
 		
@@ -73,5 +70,4 @@ public class IndexController {
 		
 		return "/bookOrder";
 	}
->>>>>>> branch 'master' of https://github.com/jakarta99/ntubook.git
 }
