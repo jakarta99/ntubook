@@ -33,7 +33,7 @@ public class Book {
 	private String college;
 	@Column(name = "DISCOUNT")
 	private Integer discount;
-	@Column(name = "NOTESON")
+	@Column(name = "NOTES_ON")
 	private String notesOn;
 	@Column(name = "HOW_NEW")
 	private String howNew;
