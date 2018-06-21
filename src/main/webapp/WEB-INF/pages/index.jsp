@@ -250,7 +250,7 @@
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
                   <a href="#">
-                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-envelope-square"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
@@ -273,7 +273,8 @@
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
                   <a href="#">
-                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-envelope-square"></i>
+                    
                   </a>
                 </li>
                 <li class="list-inline-item">
@@ -296,7 +297,7 @@
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
                   <a href="#">
-                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-envelope-square"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
