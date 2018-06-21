@@ -78,7 +78,7 @@
 			  	<tr>
 			      <th scope="row" class="table-secondary">書名</th>
 			      <td>${entity.name}</td>
-			      <td rowspan="8"><img height="450" width="350" align="left" src="img/portfolio/03-acct.jpg" alt=""></td>
+			      <td rowspan="9"><img height="450" width="350" align="left" src="img/portfolio/03-acct.jpg" alt=""></td>
 			    </tr>
 			    <tr>
 			      <th scope="row" class="table-secondary">售價</th>
