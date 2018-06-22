@@ -250,7 +250,7 @@
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
                   <a href="#">
-                    <i class="fa fa-envelope-square"></i>
+                    <i class="fa fa-envelope"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
@@ -273,7 +273,7 @@
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
                   <a href="#">
-                    <i class="fa fa-envelope-square"></i>
+                    <i class="fa fa-envelope"></i>
                     
                   </a>
                 </li>
@@ -283,7 +283,7 @@
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#">
+                  <a href="https://www.linkedin.com/in/chen-peng-b70170167/" target="_blank">
                     <i class="fa fa-linkedin"></i>
                   </a>
                 </li>
@@ -297,7 +297,7 @@
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
                   <a href="#">
-                    <i class="fa fa-envelope-square"></i>
+                    <i class="fa fa-envelope"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
