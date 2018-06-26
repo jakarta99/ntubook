@@ -44,7 +44,7 @@ public class Book {
 	private String messages;
 	
 	@Column(name = "IMAGE_FILE")
-	private String imageFile;
+	private String imageFile = "19.jpg";
 	
 	@Column(name = "SELLER_ID")
 	private Long sellerId;
