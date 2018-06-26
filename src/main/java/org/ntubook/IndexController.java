@@ -32,6 +32,10 @@ public class IndexController {
 		Book thisBook = bookDao.findById(bookId).get();
 		System.out.println(thisBook);
 		
+		if(thisBook.getViewCount() == null ) {
+			thisBook.setViewCount(0);
+		}
+		
 		thisBook.setViewCount(thisBook.getViewCount()+1);
 		bookDao.save(thisBook);
 		

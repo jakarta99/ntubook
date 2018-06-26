@@ -386,7 +386,7 @@
 					
 					var htmlContent = "<div class='col-md-4 col-sm-6 portfolio-item'>"
 										+"<a href='${pageContext.request.contextPath}/bookDetail?id="+o.id+"' border='0'>"
-										+"<img height='450' width='350' src='img/portfolio/02-calculus.jpg'>"
+										+"<img height='450' width='350' src='/upload/"+o.imageFile+"'>"
 										+"</a>"
 										+"<div class='portfolio-caption' align='center'>"
 											+"<h4>"+o.name+"</h4>"
@@ -489,7 +489,7 @@
   </body>
 
 </html>
-
+<%/*
 
 <ul>
  	<li> <a href='${pageContext.request.contextPath}/books/list'>Book Admin</a></li> 
@@ -497,3 +497,4 @@
  	<li> <a href='${pageContext.request.contextPath}/movies/list'>Movie Admin</a></li>
 	<li> <a href='${pageContext.request.contextPath}/shelfs/list'>Shelf Admin</a></li>
 </ul>
+*/%>

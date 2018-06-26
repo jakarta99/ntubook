@@ -40,6 +40,8 @@ public class Book {
 	@Column(name = "MESSAGES")
 	private String messages;
 	
+	@Column(name = "IMAGE_FILE")
+	private String imageFile;
 	
 	@Column(name = "SELLER_ID")
 	private Long sellerId;
@@ -49,16 +51,16 @@ public class Book {
 	private String currentStatus;
 	
 	
-	@Column(name = "ACCOUNT")
-	private String account;
-	@Column(name = "PASSWORD")
-	private String password;
-	@Column(name = "EMAIL")
-	private String email;
-	@Column(name = "SCHOOL_NUMBER")
-	private String schoolNumber;
-	@Column(name = "NICK_NAME")
-	private String nickName;
+//	@Column(name = "ACCOUNT")
+//	private String account;
+//	@Column(name = "PASSWORD")
+//	private String password;
+//	@Column(name = "EMAIL")
+//	private String email;
+//	@Column(name = "SCHOOL_NUMBER")
+//	private String schoolNumber;
+//	@Column(name = "NICK_NAME")
+//	private String nickName;
 	
 	
 	/*
