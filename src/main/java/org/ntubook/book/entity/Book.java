@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import org.springframework.web.multipart.MultipartFile;
 
 import lombok.Data;
 
@@ -49,6 +52,9 @@ public class Book {
 	private Long buyerId;
 	@Column(name = "CURRENT_STATUS")
 	private String currentStatus;
+	
+	@Transient
+	private MultipartFile uploadFile;
 	
 	
 //	@Column(name = "ACCOUNT")

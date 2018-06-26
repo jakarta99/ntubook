@@ -135,6 +135,8 @@ public class BookController {
 	@ResponseBody
 	public AjaxResponse insert(@RequestBody Book book) {
 		
+		
+		
 		AjaxResponse ajaxResponse = new AjaxResponse();
 		
 		log.debug("{}", book);

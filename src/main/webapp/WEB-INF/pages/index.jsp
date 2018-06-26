@@ -92,7 +92,7 @@
         
 	        <div class="row text-center">
 	        	<div class="col-md-12" >
-	        		<select class="form-control" id="college" name="college" onchange="loadFindByCollege()">
+	        		<select class="form-control" id="findTheCollege" name="findTheCollege" onchange="loadFindByCollege()">
 	        			<option value=""> === 請選擇 === </option>
 	        			<option value="M">社科院/文學院/管理學院/法律學院</option>
 	        			<option value="E">理學院/工學院/電資學院/生農學院</option>
@@ -110,7 +110,7 @@
 		        <script>
 				function loadFindByCollege() {			
 					$.ajax({
-						url: '${pageContext.request.contextPath}/books/findByCollege?college='+$("#college").val(),
+						url: '${pageContext.request.contextPath}/books/findByCollege?college='+$("#findTheCollege").val(),
 						type: 'GET',
 						dataType: 'json',  
 					}).always(function(response){
@@ -163,31 +163,31 @@
         	</div>
         	<div class="row">
           		<div class="col-lg-12">
-            		<form id="contactForm" name="sentMessage" novalidate="novalidate">
+            		<form id="bookForm" name="bookForm" novalidate="novalidate">
               			<div class="row">
                 			<div class="col-md-6">
 		          				<div class="form-group">
-		            				<input class="form-control" id="name" type="text" placeholder="書名" required="required" data-validation-required-message="請輸入書名">
+		            				<input class="form-control" id="name" name="name" type="text" placeholder="書名" required="required" data-validation-required-message="請輸入書名">
 		            				<p class="help-block text-danger"></p>
 		          				</div>
 		          				
 		          				<div class="form-group">
-						            <input class="form-control" id="price" type="text" placeholder="售價" required="required" data-validation-required-message="請輸入售價">
+						            <input class="form-control" id="price" name="price" type="text" placeholder="售價" required="required" data-validation-required-message="請輸入售價">
 						            <p class="help-block text-danger"></p>
 		          				</div>
 		          				
 								<div class="form-group">
-									<input class="form-control" id="courseName" type="text" placeholder="課程名稱" required="required" data-validation-required-message="請輸入課程名稱">
+									<input class="form-control" id="courseName" name="courseName" type="text" placeholder="課程名稱" required="required" data-validation-required-message="請輸入課程名稱">
 		          					<p class="help-block text-danger"></p>
 		          				
 		          				</div>               
 					          	
 					          	<div class="form-group">
-					            	<input class="form-control" id="courseName" type="text" placeholder="教授名稱" required="required" data-validation-required-message="請輸入教授名稱">
+					            	<input class="form-control" id="professor" name="professor" type="text" placeholder="教授名稱" required="required" data-validation-required-message="請輸入教授名稱">
 					            	<p class="help-block text-danger"></p>
 					         	</div>
 		           
-						        <select style="height:35px; width:166px">
+						        <select style="height:35px; width:166px" id="college" name="college">
 									<option value="開課學院 ">開課學院</option>
 									<option value="文學院">文學院</option>
 									<option value="理學院">理學院</option>
@@ -209,13 +209,13 @@
 									<option value="無">無</option>
 								</select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				 
-								<select style="height:35px; width:155px">
-								 	<option value="書幾成新 ">書幾成新</option>
-									<option value="全新">全新</option>
-									<option value="九成">九成</option>
-									<option value="七成">七成</option>
-									<option value="五成">五成</option>
-									<option value="三成">三成</option>
+								<select style="height:35px; width:155px" name="howNew" id="howNew">
+
+									<option value="100">全新</option>
+									<option value="90">九成</option>
+									<option value="70">七成</option>
+									<option value="50">五成</option>
+									<option value="30">三成</option>
 								</select> <p> </p>
 				   
 								<div class="form-group">
@@ -225,22 +225,22 @@
 							</div>
 				
 				 			<div class="col-md-6">
-				 				<form>
-				   					<div class="form-group">
-				     					<label for="exampleFormControlFile1"><big>上傳此書照片</big></label>
-				     					<input type="file" class="form-control-file" id="exampleFormControlFile1">
-				   					</div>
-				 				</form>
+			   					<div class="form-group">
+			     					<label for="exampleFormControlFile1"><big>上傳此書照片</big></label>
+			     					<input type="file" name="uploadFile" class="form-control-file" id="uploadFile">
+			   					</div>
 				 			</div>				
 		             
 			     			<div class="clearfix"></div>
 		    				<div class="col-lg-12 text-center">
 		       					<div id="success"></div>
-	       						<button id="sendMessageButton" class="btn btn-primary btn-lg" style="height:55px;font-size:25pt;" type="submit">Send</button>
+	       						<button id="sendMessageButton" class="btn btn-primary btn-lg" style="height:55px;font-size:25pt;" type="button">Send</button>
 	     					</div>
 			     
    						</div>
 		 			</form>
+		 			
+		 			
 		   		</div>
 			</div>
 	   	</div>
@@ -417,7 +417,44 @@
 		};
    	</script>
 
-	
+	<script>
+		 			
+		$.fn.serializeObject = function(){
+		    var o = {};
+		    var a = this.serializeArray();
+		    $.each(a, function() {
+		        if (o[this.name]) {
+		            if (!o[this.name].push) {
+		                o[this.name] = [o[this.name]];
+		            }
+		            o[this.name].push(this.value || '');
+		        } else {
+		            o[this.name] = this.value || '';
+		        }
+		    });
+		    return o;
+		};
+		
+		
+		$("#sendMessageButton").click(function() {
+		
+			$.ajax({
+				url: '${pageContext.request.contextPath}/newbook',
+				type: 'POST',
+				data: JSON.stringify($('#bookForm').serializeObject()),
+				dataType: 'json',  
+				contentType: 'application/json; charset=utf-8',
+			}).always(function(response){
+				$('#bookForm')[0].reset();
+				alert("OK");
+			});
+			
+			
+				
+		});
+		
+		
+		</script>
   </body>
 
 </html>
