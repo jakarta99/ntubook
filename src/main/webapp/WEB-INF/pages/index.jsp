@@ -259,7 +259,7 @@
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#">
+                  <a href="https://www.linkedin.com/in/%E6%96%B9%E5%9D%87-%E7%8E%8B-373616159/" target="_blank">
                     <i class="fa fa-linkedin"></i>
                   </a>
                 </li>
@@ -306,7 +306,7 @@
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#">
+                  <a href="https://www.linkedin.com/in/chunglunhsieh-5b73b9135/" target="_blank">
                     <i class="fa fa-linkedin"></i>
                   </a>
                 </li>
