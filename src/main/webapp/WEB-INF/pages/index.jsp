@@ -91,32 +91,47 @@
         	</div>
         
 	        <div class="row text-center">
-	        	<div class="col-md-4" >
-					<button type="button" style="width:200px;height:250px;font-size:27pt;" class="btn btn-primary btn-lg" onclick="show1()">社科院<br>文學院<br>管理學院<br>法律學院</button>
+	        	<div class="col-md-12" >
+	        		<select class="form-control" id="college" name="college" onchange="loadFindByCollege()">
+	        			<option value=""> === 請選擇 === </option>
+	        			<option value="M">社科院/文學院/管理學院/法律學院</option>
+	        			<option value="E">理學院/工學院/電資學院/生農學院</option>
+	        			<option value="H">醫學院/生科院/公衛學院/其他通識</option>
+	        		</select>
+	        	
 	          	</div>
+	          	<hr/>
                    
-		    	<div class="col-md-4">
-		    		<button type="button" style="width:200px;height:250px;font-size:27pt;" class="btn btn-primary btn-lg" onclick="show2()">理學院<br>工學院<br>電資學院<br>生農學院</button>
-		    	</div>
-          
-          		<div class="col-md-4">
-		    		<button type="button" style="width:200px;height:250px;font-size:27pt;" class="btn btn-primary btn-lg " onclick="show3()">醫學院<br>生科院<br>公衛學院<br>其他通識</button>
-		    	</div>
-          
-		        <div id="control1" style= "display: none">
-			        <div class="row"  id="findByCollege1" align="center">    
-			        </div>        	
+		    	<div>
+			        <div id="collegeBooksDiv" class="row text-center">
+				        
+			        </div>
 		        </div>
-		        
-		        <div id="control2" style= "display: none">
-			        <div class="row"  id="findByCollege2" align="center">    
-			        </div>        	
-		        </div>
-		        
-		        <div id="control3" style= "display: none">
-			        <div class="row"  id="findByCollege3">    
-			        </div>        	
-		        </div>
+		        <script>
+				function loadFindByCollege() {			
+					$.ajax({
+						url: '${pageContext.request.contextPath}/books/findByCollege?college='+$("#college").val(),
+						type: 'GET',
+						dataType: 'json',  
+					}).always(function(response){
+						$("#collegeBooksDiv").empty();
+						
+						$(response.data).each(function(i, o) {
+							
+							var htmlContent = "<div class='col-md-3 portfolio-item'>"
+												+"<a href='${pageContext.request.contextPath}/bookDetail?id="+o.id+"' border='0'>"
+												+"<img height='350' width='270' src='/upload/"+o.imageFile+"'>"
+												+"</a>"
+												+"<div class='portfolio-caption' align='center'>"
+													+"<h4>"+o.name+"</h4>"
+													+"<p class='text-muted' style='font-size:20pt'>"+o.price+"</p>"
+												+"</div>"
+											  +"</div>";
+							$("#collegeBooksDiv").append(htmlContent);								
+						});
+					});
+				};
+				</script>
           
         </div>
       </div>
@@ -402,89 +417,6 @@
 		};
    	</script>
 
-	<script>
-		$(function() {
-			loadFindByCollege1();
-		});
-	
-		function loadFindByCollege1() {			
-			$.ajax({
-				url: '${pageContext.request.contextPath}/books/findByCollege1',
-				type: 'GET',
-				dataType: 'json',  
-			}).always(function(response){ 
-									
-				$(response.data).each(function(i, o) {
-					var htmlContent = "<div class='col-md-3 portfolio-item'>"
-										+"<a href='${pageContext.request.contextPath}/bookDetail?id="+o.id+"' border='0'>"
-										+"<img height='350' width='270' src='img/portfolio/03-acct.jpg'>"
-										+"</a>"
-										+"<div class='portfolio-caption' align='center'>"
-											+"<h4>"+o.name+"</h4>"
-											+"<p class='text-muted' style='font-size:20pt'>"+o.price+"</p>"
-										+"</div>"
-									  +"</div>";
-					$("#findByCollege1").append(htmlContent);								
-				});
-			});
-		};
-	</script>
-	
-	<script>
-		$(function() {
-			loadFindByCollege2();
-		});
-	
-		function loadFindByCollege2() {			
-			$.ajax({
-				url: '${pageContext.request.contextPath}/books/findByCollege2',
-				type: 'GET',
-				dataType: 'json',  
-			}).always(function(response){ 
-									
-				$(response.data).each(function(i, o) {
-					var htmlContent = "<div class='col-md-3 portfolio-item'>"
-										+"<a href='${pageContext.request.contextPath}/bookDetail?id="+o.id+"' border='0'>"
-										+"<img height='350' width='270' src='img/portfolio/03-acct.jpg'>"
-										+"</a>"
-										+"<div class='portfolio-caption' align='center'>"
-											+"<h4>"+o.name+"</h4>"
-											+"<p class='text-muted' style='font-size:20pt'>"+o.price+"</p>"
-										+"</div>"
-									  +"</div>";
-					$("#findByCollege2").append(htmlContent);								
-				});
-			});
-		};
-	</script>
-	
-	<script>
-		$(function() {
-			loadFindByCollege3();
-		});
-	
-		function loadFindByCollege3() {			
-			$.ajax({
-				url: '${pageContext.request.contextPath}/books/findByCollege3',
-				type: 'GET',
-				dataType: 'json',  
-			}).always(function(response){ 
-									
-				$(response.data).each(function(i, o) {
-					var htmlContent = "<div class='col-md-3 portfolio-item'>"
-										+"<a href='${pageContext.request.contextPath}/bookDetail?id="+o.id+"' border='0'>"
-										+"<img height='350' width='270' src='img/portfolio/03-acct.jpg'>"
-										+"</a>"
-										+"<div class='portfolio-caption' align='center'>"
-											+"<h4>"+o.name+"</h4>"
-											+"<p class='text-muted' style='font-size:20pt'>"+o.price+"</p>"
-										+"</div>"
-									  +"</div>";
-					$("#findByCollege3").append(htmlContent);								
-				});
-			});
-		};
-	</script>
 	
   </body>
 

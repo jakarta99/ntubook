@@ -1,7 +1,6 @@
 package org.ntubook.book.web;
 
 import java.util.Arrays;
-import java.util.List;
 
 import org.assertj.core.util.Lists;
 import org.ntubook.book.dao.BookDao;
@@ -89,49 +88,37 @@ public class BookController {
 	}
 	
 	
-	@GetMapping("/findByCollege1")
+	@GetMapping("/findByCollege")
 	@ResponseBody
-	public AjaxResponse queryFindByCollege1() {
+	public AjaxResponse queryFindByCollege(@RequestParam("college")String college) {
+		
+		
+		log.debug("college:"+college);
 		
 		AjaxResponse ajaxResponse = new AjaxResponse();
 		
-		ajaxResponse.setData(Lists.newArrayList(bookDao.findByCollegeIn(Arrays.asList("管理學院", "社會科學院", "文學院","法學院"))));
+		
+		
+		switch(college) {
+		case "M":
+			ajaxResponse.setData(Lists.newArrayList(bookDao.findByCollegeIn(Arrays.asList("管理學院", "社會科學院", "文學院","法學院"))));
+			break;
+		case "E":
+			ajaxResponse.setData(Lists.newArrayList(bookDao.findByCollegeIn(Arrays.asList("理學院", "工學院", "電機資訊學院", "生物資源暨農學院"))));
+			break;
+		case "H":
+			ajaxResponse.setData(Lists.newArrayList(bookDao.findByCollegeIn(Arrays.asList("公共衛生學院", "生命科學院", "醫學院","其他"))));
+			break;
+		default:
+			ajaxResponse.setData(null);
+			
+		} 
 		ajaxResponse.setMessages(null);
 		
 		
 		return ajaxResponse;
 		
 	}
-	
-	@GetMapping("/findByCollege2")
-	@ResponseBody
-	public AjaxResponse queryFindByCollege2() {
-		
-		AjaxResponse ajaxResponse = new AjaxResponse();
-		
-		ajaxResponse.setData(Lists.newArrayList(bookDao.findByCollegeIn(Arrays.asList("理學院", "工學院", "電機資訊學院", "生物資源暨農學院"))));
-		ajaxResponse.setMessages(null);
-		
-		
-		return ajaxResponse;
-		
-	}
-	
-	@GetMapping("/findByCollege3")
-	@ResponseBody
-	public AjaxResponse queryFindByCollege3() {
-		
-		AjaxResponse ajaxResponse = new AjaxResponse();
-		
-		ajaxResponse.setData(Lists.newArrayList(bookDao.findByCollegeIn(Arrays.asList("公共衛生學院", "生命科學院", "醫學院","其他"))));
-		ajaxResponse.setMessages(null);
-		
-		
-		return ajaxResponse;
-		
-	}
-	
-	
 	
 	@DeleteMapping
 	@ResponseBody
