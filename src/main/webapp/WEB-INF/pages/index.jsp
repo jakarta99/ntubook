@@ -61,7 +61,7 @@
         	<div class="intro-lead-in">
           		<big><big>Find The Book You Want!</big></big>
        		</div>
-  	    	<form id="formsearch" action="/books/search" enctype="multipart/form-data" method="get">
+  	    	<form id="formsearch" action="/search" enctype="multipart/form-data" method="get">
         		<div class="form-row">
        	  			<div class="col-12 col-md-9">
           				<input name="allsearch" type="text" style="height:65px;font-size:20pt;" class="form-control form-control-lg" id="txtallsearch" placeholder="請輸入書名..." size="24" />

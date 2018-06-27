@@ -44,22 +44,29 @@ public class IndexController {
 		return "/bookDetail";
 	}
 	
-	//@RequestMapping("/search")
-	//public String search(@RequestParam("allsearch") String allsearch, Model model) {
+	@RequestMapping("/search")
+	public String search(@RequestParam("allsearch") String allsearch, Model model) {
 		
-		//List<Book> books = Lists.newArrayList(bookDao.findByNameLike(allsearch).get(Integer)); 
-		//for (Book book:books) {
-		//	System.out.println(book);
-		//}
+		List<Book> books = Lists.newArrayList(bookDao.findByNameLike(allsearch).get(Integer)); 
+		for (Book book:books) {
+			System.out.println(book);
+		}
 		
-		//Book thisBook = bookDao.findByNameLike(allsearch).get(Integer);
-		//System.out.println(thisBook);
+		Book thisBook = bookDao.findByNameLike(allsearch).get(Integer);
+		System.out.println(thisBook);
 		
-		//model.addAttribute("result", thisBook);
+		if(thisBook.getViewCount() == null ) {
+			thisBook.setViewCount(0);
+		}
 		
-		//return "/search";
+		thisBook.setViewCount(thisBook.getViewCount()+1);
+		bookDao.save(thisBook);
 		
-	//}
+		model.addAttribute("result", thisBook);
+		
+		return "/search";
+		
+	}
 	
 	@RequestMapping("/bookOrder")
 	public String bookOrder(@RequestParam("id") Long bookId, Model model) {

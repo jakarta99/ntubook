@@ -67,7 +67,7 @@
 			  	<tr>
 			      <th scope="row" class="table-secondary">書名</th>
 			      <td>${result.name}</td>
-			      <td rowspan="8"><img height="450" width="350" align="left" src="img/portfolio/03-acct.jpg" alt=""></td>
+			      <td rowspan="9"><img height="450" width="350" align="left" src="/upload/${result.imageFile}" alt=""></td>
 			    </tr>
 			    <tr>
 			      <th scope="row" class="table-secondary">售價</th>
@@ -84,7 +84,7 @@
 			    </tr>
 			    <tr>
 			      <th scope="row" class="table-secondary">開課系所</th>
-			      <td>${entity.college}</td>
+			      <td>${result.college}</td>
 			    </tr>
 			     <tr>
 			      <th scope="row" class="table-secondary">有無筆記</th>
@@ -96,7 +96,7 @@
 			    </tr>
 			    <tr>
 			      <th scope="row" class="table-secondary">備註</th>
-			      <td>${entity.messages}</td>
+			      <td>${result.messages}</td>
 			    </tr>
 			    <tr>
 			      <th scope="row" class="table-secondary">關注人數</th>
@@ -107,7 +107,10 @@
 			</table>
 			
 			<div class="text-center">
-				<button type="button" class="btn btn-danger  btn-lg">我有興趣！</button>
+				<button type="button" class="btn btn-danger  btn-lg" id="interestBtn" onclick="alert('Thanks a lot');">我有興趣！</button>
+				&nbsp;&nbsp;&nbsp;
+				
+				<button type="button" class="btn btn-warning  btn-lg" id="indexBtn" onclick="document.location.href='/'">查詢其他書！</button>
 			</div>
 		
   </body>

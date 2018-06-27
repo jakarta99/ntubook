@@ -60,7 +60,7 @@ public class BookController {
 		
 		return "/bookEdit";
 	}
-	
+	/*
 	@RequestMapping("/search")
 	@ResponseBody
 	public AjaxResponse querySearch(@RequestParam("allsearch") String allsearch) {
@@ -73,7 +73,7 @@ public class BookController {
 		return ajaxResponse;
 		
 	}
-	
+	*/
 	@GetMapping("/hot3")
 	@ResponseBody
 	public AjaxResponse queryHot3() {
